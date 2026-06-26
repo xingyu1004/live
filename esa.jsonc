@@ -1,7 +1,7 @@
 {
   "name": "live",
   "assets": {
-    "directory": "./public",
+    "directory": "./",
     "notFoundStrategy": "404Page"
   }
 }
