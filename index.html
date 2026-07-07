@@ -684,7 +684,7 @@
             text-overflow: ellipsis;
         }
 
-        /* 实况照片徽章：粉紫渐变，左下角标�?Live Photo 配对 */
+        /* 实况照片徽章：粉紫渐变，左下角标识 Live Photo 配对 */
         .file-item-live-badge {
             position: absolute;
             bottom: 24px;
@@ -835,7 +835,7 @@
             animation: slideUp 0.3s ease;
         }
 
-        /* 工具栏行：模式切�?+ 设备按钮并排 */
+        /* 工具栏行：模式切换 + 设备按钮并排 */
         .toolbar-row {
             display: flex;
             align-items: center;
@@ -847,7 +847,7 @@
             min-width: 0;
         }
 
-        /* 紧凑胶囊式模式切换：两按钮一行，最小占用空�?*/
+        /* 紧凑胶囊式模式切换：两按钮一行，最小占用空间 */
         .mode-switch {
             display: inline-flex;
             gap: 2px;
@@ -899,7 +899,7 @@
             gap: 8px;
         }
 
-        /* 设备搜索�?*/
+        /* 设备搜索框 */
         .preset-search {
             display: none;
             position: relative;
@@ -1349,7 +1349,7 @@
             animation: slideUp 0.2s ease;
         }
 
-        /* 预览弹窗 - 精美卡片式（iOS 液态玻璃少女风�?*/
+        /* 预览弹窗 - 精美卡片式（iOS 液态玻璃少女风） */
         .preview-modal-content {
             max-width: 480px;
             width: 92%;
@@ -1360,7 +1360,7 @@
             padding: 0;
         }
 
-        /* 顶部缩略�?Hero 区：图片 + 渐变蒙层 + 设备型号大字 */
+        /* 顶部缩略图 Hero 区：图片 + 渐变蒙层 + 设备型号大字 */
         .preview-hero {
             position: relative;
             width: 100%;
@@ -1412,7 +1412,7 @@
             padding: 14px 16px 18px;
         }
 
-        /* 关键参数三列：焦�?/ 光圈 / ISO，大字突�?*/
+        /* 关键参数三列：焦距 / 光圈 / ISO，大字突出 */
         .preview-key-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -1444,7 +1444,7 @@
             font-size: 14px;
         }
 
-        /* 镜头型号大字卡片：图�?+ 镜头类型 + 镜头型号 */
+        /* 镜头型号大字卡片：图标 + 镜头类型 + 镜头型号 */
         .preview-lens-card {
             background: var(--preview-lens-bg);
             border: 1px solid var(--border);
@@ -1488,7 +1488,7 @@
             font-weight: 500;
         }
 
-        /* 次要参数列表：紧凑双�?*/
+        /* 次要参数列表：紧凑双列 */
         .preview-meta-list {
             background: var(--surface);
             border: 1px solid var(--border);
@@ -1780,7 +1780,7 @@
             transition: opacity 0.18s ease;
         }
         
-        /* toast 三色区分：成功绿、失败红、信息紫，高对比度直观判�?*/
+        /* toast 三色区分：成功绿、失败红、信息紫，高对比度直观判断 */
         .toast.success {
             background: var(--success-btn-gradient);
         }
@@ -2265,7 +2265,7 @@
             display: none !important;
         }
 
-        /* ===== 统一布局：新�?/ 高级共用 ===== */
+        /* ===== 统一布局：新手 / 高级共用 ===== */
         #editorModeSection,
         .form-card-tags,
         .simple-mode-footer {
@@ -2934,7 +2934,7 @@
                     </div>
                     <div class="preset-search" id="presetSearch">
                         <svg class="preset-search-icon" viewBox="0 0 24 24" width="16" height="16"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-                        <input type="text" class="preset-search-input" id="presetSearchInput" placeholder="搜索 iPhone / iPad 型号�? autocomplete="off">
+                        <input type="text" class="preset-search-input" id="presetSearchInput" placeholder="搜索 iPhone / iPad 型号..." autocomplete="off">
                         <button class="preset-search-clear" id="presetSearchClear" type="button" aria-label="清空">
                             <svg viewBox="0 0 24 24" width="14" height="14"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
                         </button>
@@ -3067,7 +3067,7 @@
                 </button>
                 <button type="button" class="setting-tag mode-advanced-only" data-card="resolution">
                     <svg class="form-card-icon" viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zM5 15h14v3H5z"/></svg>
-                    分辨�?                </button>
+                    分辨率                </button>
                 <button type="button" class="setting-tag" data-card="filesize">
                     <svg class="form-card-icon" viewBox="0 0 24 24"><path d="M20 6h-8l-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V6h5.17l2 2H20v10zm-8-1c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-4-8h8v2H8z"/></svg>
                     文件大小
@@ -3097,7 +3097,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="form-label">经度 (°)</label>
-                                <input type="number" class="form-input" id="gpsLongitudeInput" placeholder="�?121.4737" step="0.000001" min="-180" max="180" inputmode="decimal">
+                                <input type="number" class="form-input" id="gpsLongitudeInput" placeholder="如 121.4737" step="0.000001" min="-180" max="180" inputmode="decimal">
                             </div>
                             <div class="form-group">
                                 <label class="form-label">海拔 (m)</label>
@@ -3116,16 +3116,16 @@
                         <div class="gps-hot-cities" id="gpsHotCities">
                             <button type="button" class="gps-city-btn" data-lat="31.2304" data-lng="121.4737" data-label="上海" data-name="上海">上海</button>
                             <button type="button" class="gps-city-btn" data-lat="39.9042" data-lng="116.4074" data-label="北京" data-name="北京">北京</button>
-                            <button type="button" class="gps-city-btn" data-lat="23.1291" data-lng="113.2644" data-label="广东 · 广州" data-name="广州">广州</button>
-                            <button type="button" class="gps-city-btn" data-lat="22.5431" data-lng="114.0579" data-label="广东 · 深圳" data-name="深圳">深圳</button>
-                            <button type="button" class="gps-city-btn" data-lat="30.5728" data-lng="104.0668" data-label="四川�?· 成都" data-name="成都">成都</button>
-                            <button type="button" class="gps-city-btn" data-lat="30.2741" data-lng="120.1551" data-label="浙江�?· 杭州" data-name="杭州">杭州</button>
-                            <button type="button" class="gps-city-btn" data-lat="32.0603" data-lng="118.7969" data-label="江苏�?· 南京" data-name="南京">南京</button>
-                            <button type="button" class="gps-city-btn" data-lat="29.5630" data-lng="106.5516" data-label="重庆�? data-name="重庆">重庆</button>
-                            <button type="button" class="gps-city-btn" data-lat="30.5928" data-lng="114.3055" data-label="湖北�?· 武汉" data-name="武汉">武汉</button>
-                            <button type="button" class="gps-city-btn" data-lat="34.3416" data-lng="108.9398" data-label="陕西�?· 西安" data-name="西安">西安</button>
-                            <button type="button" class="gps-city-btn" data-lat="28.2282" data-lng="112.9388" data-label="湖南�?· 长沙" data-name="长沙">长沙</button>
-                            <button type="button" class="gps-city-btn" data-lat="18.2528" data-lng="109.5120" data-label="海南�?· 三亚" data-name="三亚">三亚</button>
+                            <button type="button" class="gps-city-btn" data-lat="23.1291" data-lng="113.2644" data-label="广东省 · 广州" data-name="广州">广州</button>
+                            <button type="button" class="gps-city-btn" data-lat="22.5431" data-lng="114.0579" data-label="广东省 · 深圳" data-name="深圳">深圳</button>
+                            <button type="button" class="gps-city-btn" data-lat="30.5728" data-lng="104.0668" data-label="四川省 · 成都" data-name="成都">成都</button>
+                            <button type="button" class="gps-city-btn" data-lat="30.2741" data-lng="120.1551" data-label="浙江省 · 杭州" data-name="杭州">杭州</button>
+                            <button type="button" class="gps-city-btn" data-lat="32.0603" data-lng="118.7969" data-label="江苏省 · 南京" data-name="南京">南京</button>
+                            <button type="button" class="gps-city-btn" data-lat="29.5630" data-lng="106.5516" data-label="重庆市" data-name="重庆">重庆</button>
+                            <button type="button" class="gps-city-btn" data-lat="30.5928" data-lng="114.3055" data-label="湖北省 · 武汉" data-name="武汉">武汉</button>
+                            <button type="button" class="gps-city-btn" data-lat="34.3416" data-lng="108.9398" data-label="陕西省 · 西安" data-name="西安">西安</button>
+                            <button type="button" class="gps-city-btn" data-lat="28.2282" data-lng="112.9388" data-label="湖南省 · 长沙" data-name="长沙">长沙</button>
+                            <button type="button" class="gps-city-btn" data-lat="18.2528" data-lng="109.5120" data-label="海南省 · 三亚" data-name="三亚">三亚</button>
                         </div>
                     </div>
                     <div class="form-group full-width" style="margin-top:12px;">
@@ -3141,7 +3141,7 @@
                 </div>
             </div>
 
-            <!-- 设置弹窗：点击标签按钮弹出对应设置内�?-->
+            <!-- 设置弹窗：点击标签按钮弹出对应设置内容 -->
             <div class="modal-overlay" id="settingsModal">
                 <div class="modal-content settings-modal-content">
                     <div class="modal-header">
@@ -3169,11 +3169,11 @@
                             <div class="form-grid">
                                 <div class="form-group">
                                     <label class="form-label">设备厂商</label>
-                                    <input type="text" class="form-input" id="make" placeholder="�?Apple">
+                                    <input type="text" class="form-input" id="make" placeholder="如 Apple">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">设备型号</label>
-                                    <input type="text" class="form-input" id="model" placeholder="�?iPhone 16 Pro">
+                                    <input type="text" class="form-input" id="model" placeholder="如 iPhone 16 Pro">
                                 </div>
                                 <div class="form-group full-width">
                                     <label class="form-label">镜头型号</label>
@@ -3181,15 +3181,15 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">焦距 (mm)</label>
-                                    <input type="text" class="form-input" id="focalLength" placeholder="�?6.765">
+                                    <input type="text" class="form-input" id="focalLength" placeholder="如 6.765">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">35mm等效焦距</label>
-                                    <input type="text" class="form-input" id="focalLength35" placeholder="�?24">
+                                    <input type="text" class="form-input" id="focalLength35" placeholder="如 24">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">系统版本</label>
-                                    <input type="text" class="form-input" id="software" placeholder="�?iOS 18.1">
+                                    <input type="text" class="form-input" id="software" placeholder="如 iOS 18.1">
                                 </div>
                             </div>
                         </div>
@@ -3201,19 +3201,19 @@
                             <div class="form-grid">
                                 <div class="form-group">
                                     <label class="form-label">光圈 (f/)</label>
-                                    <input type="text" class="form-input" id="fNumber" placeholder="�?1.78">
+                                    <input type="text" class="form-input" id="fNumber" placeholder="如 1.78">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">快门速度</label>
-                                    <input type="text" class="form-input" id="exposureTime" placeholder="�?1/120">
+                                    <input type="text" class="form-input" id="exposureTime" placeholder="如 1/120">
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label">感光�?(ISO)</label>
-                                    <input type="text" class="form-input" id="iso" placeholder="�?100">
+                                    <label class="form-label">感光度 (ISO)</label>
+                                    <input type="text" class="form-input" id="iso" placeholder="如 100">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">曝光补偿</label>
-                                    <input type="text" class="form-input" id="exposureBias" placeholder="�?0">
+                                    <input type="text" class="form-input" id="exposureBias" placeholder="如 0">
                                 </div>
                             </div>
                         </div>
@@ -3230,14 +3230,14 @@
                             <div class="form-grid" style="margin-top: 12px;">
                                 <div class="form-group">
                                     <label class="form-label">宽度 (px)</label>
-                                    <input type="number" class="form-input" id="imageWidth" placeholder="�?4032">
+                                    <input type="number" class="form-input" id="imageWidth" placeholder="如 4032">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">高度 (px)</label>
-                                    <input type="number" class="form-input" id="imageHeight" placeholder="�?3024">
+                                    <input type="number" class="form-input" id="imageHeight" placeholder="如 3024">
                                 </div>
                             </div>
-                            <div class="form-hint" style="margin-top: 8px;">EXIF 分辨率会与实际像素保持一致，竖拍图自动交换宽高。</div>
+                            <div class="form-hint" style="margin-top: 8px;">EXIF 分辨率会与实际像素保持一致，系统会自动保持原图比例防变形。</div>
                         </div>
                         <div class="settings-panel" data-panel="filesize" style="display:none;">
                             <div class="form-group full-width">
@@ -3249,7 +3249,7 @@
                                 </div>
                             </div>
                             <div class="form-group full-width" style="margin-top:12px;">
-                                <label class="form-label">自定义大�?(MB)</label>
+                                <label class="form-label">自定义大小 (MB)</label>
                                 <input type="number" class="form-input" id="customFileSize" placeholder="输入要增加的大小" step="0.1" min="0" value="2.5">
                             </div>
                             <div class="filesize-toggle" style="margin-top:12px;">
@@ -3267,7 +3267,7 @@
                 </div>
             </div>
 
-            <!-- 预览弹窗：显示当前最终效果信�?-->
+            <!-- 预览弹窗：显示当前最终效果信息 -->
             <div class="modal-overlay" id="previewModal">
                 <div class="modal-content preview-modal-content">
                     <div class="modal-header">
@@ -3296,7 +3296,7 @@
 
     <div class="loading-overlay" id="loading">
         <div class="spinner"></div>
-        <div class="loading-text" id="loadingText">处理�?..</div>
+        <div class="loading-text" id="loadingText">处理中...</div>
     </div>
 
     <div class="toast" id="toast"></div>
@@ -3344,9 +3344,10 @@
                 <button class="modal-close" id="supportClose" style="background: var(--surface-light); border-radius: 50%;">×</button>
             </div>
             <div class="modal-body" style="padding: 12px 20px 24px;">
-                <div style="font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px; font-weight: 400;">
-                    服务器需要成本，有能力的宝宝可以支持一下呀，爱你们哦~<br>
-                    有问题或者建议也可以进群交流哦，欢迎宝宝们~
+                <div style="font-size: 13px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 18px; font-weight: 400; letter-spacing: 0.3px; padding: 12px; background: rgba(255, 255, 255, 0.4); border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);">
+                    承接各类定制项目（网站、App等），有想法随时联系，好说话哦~<br>
+                    服务器维持需要成本，有能力的宝宝可以支持一下呀，爱你们！<br>
+                    有问题或建议也欢迎进群交流，等你们哦~
                 </div>
                 <img src="https://yz.yhcn.top/vx.jpg" alt="赞赏码" style="width: 100%; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 20px;">
                 
