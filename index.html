@@ -1763,7 +1763,7 @@
             border-radius: 10px;
             font-size: 14px;
             font-weight: 600;
-            z-index: 10050;
+            z-index: 1001;
             max-width: min(320px, calc(100vw - 48px));
             line-height: 1.5;
             text-align: center;
@@ -1771,12 +1771,10 @@
             border: none;
             box-shadow: 0 10px 30px rgba(15,23,42,0.18);
             opacity: 0;
-            visibility: hidden;
             transition: opacity 0.18s ease, visibility 0s linear 0.18s;
         }
         
         .toast.show {
-            display: block;
             opacity: 1;
             visibility: visible;
             transition: opacity 0.18s ease;
@@ -2933,11 +2931,6 @@
                         <button class="preset-tab" data-brand="honor">荣耀</button>
                         <button class="preset-tab" data-brand="samsung">三星</button>
                         <button class="preset-tab" data-brand="realme">realme</button>
-                        <button class="preset-tab" data-brand="meizu">魅族</button>
-                        <button class="preset-tab" data-brand="nubia">努比亚</button>
-                        <button class="preset-tab" data-brand="rog">ROG</button>
-                        <button class="preset-tab" data-brand="pixel">Pixel</button>
-                        <button class="preset-tab" data-brand="sony">索尼</button>
                     </div>
                     <div class="preset-search" id="presetSearch">
                         <svg class="preset-search-icon" viewBox="0 0 24 24" width="16" height="16"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
@@ -3053,14 +3046,6 @@
                     <span class="setting-row-body">
                         <span class="setting-row-label">文件大小</span>
                         <span class="setting-row-value" id="simpleFilesizeValue">未调整</span>
-                    </span>
-                    <span class="setting-row-chevron">›</span>
-                </button>
-                <button type="button" class="setting-row" id="simplePlatformRow" data-card="platform">
-                    <span class="setting-row-icon teal">📱</span>
-                    <span class="setting-row-body">
-                        <span class="setting-row-label">目标相册</span>
-                        <span class="setting-row-value" id="simplePlatformValue">iOS 相册</span>
                     </span>
                     <span class="setting-row-chevron">›</span>
                 </button>
@@ -3234,28 +3219,25 @@
                         </div>
                         <div class="settings-panel mode-advanced-only" data-panel="resolution" style="display:none;">
                             <div class="form-group">
-                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                                    <label class="form-label" style="margin-bottom:0;">快速选择</label>
-                                    <button type="button" class="gps-clear-btn" id="resolutionClearBtn" style="margin-top:0; padding:4px 10px; font-size:12px;">清除</button>
-                                </div>
+                                <label class="form-label">快速选择</label>
                                 <div class="resolution-presets" id="sizePresetButtons">
-                                    <button type="button" class="resolution-btn" data-width="4032" data-height="3024">12MP (4032×3024)</button>
-                                    <button type="button" class="resolution-btn" data-width="4000" data-height="3000">12MP (4000×3000)</button>
-                                    <button type="button" class="resolution-btn" data-width="5712" data-height="4284">24MP (5712×4284)</button>
-                                    <button type="button" class="resolution-btn" data-width="8064" data-height="6048">48MP (8064×6048)</button>
+                                    <button type="button" class="resolution-btn" data-height="4032" data-width="3024">12MP (4032×3024)</button>
+                                    <button type="button" class="resolution-btn" data-height="4000" data-width="3000">12MP (4000×3000)</button>
+                                    <button type="button" class="resolution-btn" data-height="5712" data-width="4284">24MP (5712×4284)</button>
+                                    <button type="button" class="resolution-btn" data-height="8064" data-width="6048">48MP (8064×6048)</button>
                                 </div>
                             </div>
                             <div class="form-grid" style="margin-top: 12px;">
                                 <div class="form-group">
-                                    <label class="form-label">宽度 (px)</label>
-                                    <input type="number" class="form-input" id="imageWidth" placeholder="如 4032">
+                                    <label class="form-label">高度 (px)</label>
+                                    <input type="number" class="form-input" id="imageHeight" placeholder="如 4032">
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label">高度 (px)</label>
-                                    <input type="number" class="form-input" id="imageHeight" placeholder="如 3024">
+                                    <label class="form-label">宽度 (px)</label>
+                                    <input type="number" class="form-input" id="imageWidth" placeholder="如 3024">
                                 </div>
                             </div>
-                            <div class="form-hint" style="margin-top: 8px;">填写或点选后按该宽高输出；EXIF 分辨率与实际像素一致，不再自动改比例。</div>
+                            <div class="form-hint" style="margin-top: 8px;">EXIF 分辨率会与实际像素保持一致，系统会自动保持原图比例防变形。</div>
                         </div>
                         <div class="settings-panel" data-panel="filesize" style="display:none;">
                             <div class="form-group full-width">
@@ -3277,16 +3259,6 @@
                                 </label>
                                 <span class="toggle-label">启用文件大小调整</span>
                             </div>
-                        </div>
-                        <div class="settings-panel" data-panel="platform" style="display:none;">
-                            <div class="form-group full-width">
-                                <label class="form-label">目标相册</label>
-                                <div class="filesize-btns" id="platformButtons">
-                                    <button type="button" class="filesize-btn active" data-platform="ios">iOS 相册（默认）</button>
-                                    <button type="button" class="filesize-btn" data-platform="android">安卓相册</button>
-                                </div>
-                            </div>
-                            <div class="form-hint" style="margin-top: 8px;">iOS 模式写入中文镜头型号；安卓模式跳过中文镜头型号（避免乱码），其他参数正常写入。</div>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -3328,21 +3300,6 @@
     </div>
 
     <div class="toast" id="toast"></div>
-
-    <div class="modal-overlay" id="feedbackModal" style="z-index:10040;">
-        <div class="modal-content" style="max-width:340px;">
-            <div class="modal-header">
-                <span class="modal-title" id="feedbackModalTitle">提示</span>
-                <button class="modal-close" id="feedbackModalClose" type="button">×</button>
-            </div>
-            <div class="modal-body">
-                <p id="feedbackModalText" style="margin:0;font-size:14px;line-height:1.7;color:var(--text-secondary);word-break:break-word;"></p>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" id="feedbackModalOk" type="button" style="width:100%;">知道了</button>
-            </div>
-        </div>
-    </div>
 
     <div class="modal-overlay" id="downloadModal">
         <div class="modal-content">
