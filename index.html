@@ -39,18 +39,11 @@
             --search-focus-border: rgba(255, 122, 166, 0.5);
             --search-focus-shadow: rgba(255, 122, 166, 0.12);
             --search-highlight: rgba(255, 122, 166, 0.28);
-            --play-icon-bg: rgba(255, 255, 255, 0.85);
-            --mode-switch-bg: rgba(255, 255, 255, 0.72);
             --hover-overlay: rgba(0, 0, 0, 0.04);
             --hero-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 244, 248, 0.98) 100%);
             --summary-bg: linear-gradient(135deg, rgba(255, 244, 248, 0.96) 0%, rgba(245, 239, 255, 0.96) 100%);
-            --summary-border: rgba(255, 214, 229, 0.92);
-            --footer-bg: linear-gradient(180deg, transparent, rgba(255, 244, 248, 0.5));
-            --footer-border: rgba(255, 214, 229, 0.65);
             --meta-btn-border: rgba(255,255,255,0.35);
             --meta-btn-bg: rgba(255,255,255,0.2);
-            --note-bg: rgba(255,255,255,0.62);
-            --note-border: rgba(255, 214, 229, 0.7);
             --hint-bg: rgba(255,255,255,0.65);
             --empty-bg: rgba(255,255,255,0.55);
             --textarea-bg: rgba(255,255,255,0.78);
@@ -62,8 +55,6 @@
             --coords-bg: linear-gradient(135deg, #FFF0F5 0%, #FFE4ED 100%);
             --workflow-active-bg: linear-gradient(135deg, rgba(255, 228, 237, 0.7), rgba(236, 221, 255, 0.5));
             --gps-header-bg: linear-gradient(135deg, rgba(255, 228, 237, 0.5) 0%, rgba(236, 221, 255, 0.5) 100%);
-            --lens-panel-bg: linear-gradient(135deg, rgba(255, 248, 251, 0.96) 0%, rgba(247, 241, 255, 0.96) 100%);
-            --video-thumb-bg: linear-gradient(135deg, rgba(201, 168, 255, 0.35) 0%, rgba(255, 228, 237, 0.5) 100%);
             --thumb-accent: linear-gradient(135deg, var(--primary-light), #ECDDFF);
             --preview-hero-bg: linear-gradient(135deg, var(--primary-light), #F7F1FF);
             --preview-key-bg: linear-gradient(135deg, rgba(255, 248, 251, 0.96), rgba(247, 241, 255, 0.96));
@@ -79,9 +70,6 @@
             --preview-tag-border: #81C784;
             --preview-tag-color: #2E7D32;
             --setting-row-border: rgba(255, 214, 229, 0.65);
-            --toggle-track: #ccc;
-            --toggle-thumb: #ffffff;
-            --map-control-bg: #ffffff;
             --media-thumb-bg: #f5f5f5;
             --action-bar-bg: rgba(255, 249, 251, 0.95);
             --focus-ring: rgba(255, 107, 157, 0.15);
@@ -96,93 +84,7 @@
             --preview-gps-bg: linear-gradient(135deg, rgba(125, 211, 168, 0.14), rgba(255, 228, 237, 0.4));
         }
 
-        @media (prefers-color-scheme: dark) {
-            html:not([data-theme="light"]) {
-                --primary: #FF85B0;
-                --primary-dark: #FF9EC4;
-                --primary-light: rgba(255, 107, 157, 0.18);
-                --success: #5CB88A;
-                --warning: #E69A2E;
-                --danger: #FF5252;
-                --purple: #B388FF;
-                --bg: #121212;
-                --surface: #1E1E1E;
-                --surface-light: #2A2A2A;
-                --border: #454545;
-                --text: #E8E8E8;
-                --text-secondary: #B0B0B0;
-                --text-tertiary: #888888;
-                --header-bg: rgba(18, 18, 18, 0.9);
-                --modal-overlay: rgba(0, 0, 0, 0.7);
-                --modal-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
-                --input-bg: #2C2C2C;
-                --btn-hover: #2A2A2A;
-                --shadow-color: rgba(0, 0, 0, 0.3);
-                --shadow-color-strong: rgba(0, 0, 0, 0.4);
-                --shadow-color-heavy: rgba(0, 0, 0, 0.5);
-                --bg-gradient-1: rgba(255, 133, 176, 0.05);
-                --bg-gradient-2: rgba(179, 136, 255, 0.05);
-                --search-focus-border: rgba(255, 133, 176, 0.5);
-                --search-focus-shadow: rgba(255, 133, 176, 0.12);
-                --search-highlight: rgba(255, 133, 176, 0.28);
-                --play-icon-bg: rgba(255, 255, 255, 0.2);
-                --mode-switch-bg: rgba(44, 44, 44, 0.72);
-                --hover-overlay: rgba(255, 255, 255, 0.08);
-                --hero-bg: linear-gradient(135deg, rgba(30, 30, 30, 0.98) 0%, rgba(40, 30, 35, 0.98) 100%);
-                --summary-bg: linear-gradient(135deg, rgba(40, 30, 35, 0.96) 0%, rgba(35, 30, 45, 0.96) 100%);
-                --summary-border: rgba(255, 133, 176, 0.2);
-                --footer-bg: linear-gradient(180deg, transparent, rgba(40, 30, 35, 0.5));
-                --footer-border: rgba(255, 133, 176, 0.15);
-                --meta-btn-border: rgba(255,255,255,0.15);
-                --meta-btn-bg: rgba(255,255,255,0.1);
-                --note-bg: rgba(40, 30, 35, 0.62);
-                --note-border: rgba(255, 133, 176, 0.2);
-                --hint-bg: rgba(40, 30, 35, 0.65);
-                --empty-bg: rgba(40, 30, 35, 0.55);
-                --textarea-bg: rgba(30, 30, 30, 0.78);
-                --on-primary: #ffffff;
-                --primary-gradient: linear-gradient(135deg, #FF6B9D 0%, #FF9EC4 100%);
-                --chip-active-bg: linear-gradient(135deg, rgba(255, 107, 157, 0.28), rgba(255, 107, 157, 0.14));
-                --upload-hover-bg: linear-gradient(135deg, rgba(45, 35, 40, 0.98), rgba(38, 32, 48, 0.98));
-                --upload-drag-bg: linear-gradient(135deg, rgba(255, 107, 157, 0.14), rgba(179, 136, 255, 0.1));
-                --coords-bg: linear-gradient(135deg, rgba(45, 35, 40, 0.95), rgba(38, 32, 48, 0.95));
-                --workflow-active-bg: linear-gradient(135deg, rgba(255, 107, 157, 0.2), rgba(179, 136, 255, 0.14));
-                --gps-header-bg: linear-gradient(135deg, rgba(255, 107, 157, 0.12), rgba(179, 136, 255, 0.1));
-                --lens-panel-bg: linear-gradient(135deg, rgba(38, 32, 42, 0.98), rgba(32, 30, 40, 0.98));
-                --video-thumb-bg: linear-gradient(135deg, rgba(179, 136, 255, 0.22), rgba(255, 107, 157, 0.14));
-                --thumb-accent: linear-gradient(135deg, rgba(255, 107, 157, 0.22), rgba(179, 136, 255, 0.18));
-                --preview-hero-bg: linear-gradient(135deg, rgba(255, 107, 157, 0.15), rgba(179, 136, 255, 0.12));
-                --preview-key-bg: linear-gradient(135deg, rgba(38, 32, 42, 0.96), rgba(32, 30, 40, 0.96));
-                --preview-lens-bg: linear-gradient(135deg, rgba(255, 107, 157, 0.18), rgba(179, 136, 255, 0.14));
-                --icon-pink: linear-gradient(135deg, rgba(255, 107, 157, 0.28), rgba(255, 107, 157, 0.14));
-                --icon-blue: linear-gradient(135deg, rgba(100, 181, 246, 0.24), rgba(66, 165, 245, 0.14));
-                --icon-green: linear-gradient(135deg, rgba(125, 211, 168, 0.24), rgba(92, 184, 138, 0.14));
-                --icon-purple: linear-gradient(135deg, rgba(179, 136, 255, 0.24), rgba(156, 120, 255, 0.14));
-                --icon-orange: linear-gradient(135deg, rgba(255, 183, 71, 0.24), rgba(255, 152, 56, 0.14));
-                --icon-teal: linear-gradient(135deg, rgba(77, 182, 172, 0.24), rgba(56, 142, 132, 0.14));
-                --icon-indigo: linear-gradient(135deg, rgba(159, 168, 218, 0.24), rgba(121, 134, 203, 0.14));
-                --preview-tag-bg: linear-gradient(135deg, rgba(92, 184, 138, 0.2), rgba(100, 181, 246, 0.16));
-                --preview-tag-border: rgba(92, 184, 138, 0.55);
-                --preview-tag-color: #7DD3A8;
-                --setting-row-border: rgba(255, 133, 176, 0.18);
-                --toggle-track: #555555;
-                --toggle-thumb: #e8e8e8;
-                --map-control-bg: #2c2c2c;
-                --media-thumb-bg: #1a1a1a;
-                --action-bar-bg: rgba(18, 18, 18, 0.95);
-                --focus-ring: rgba(255, 133, 176, 0.22);
-                --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
-                --gps-clear-bg: #2c2c2c;
-                --danger-text: #FF6B6B;
-                --danger-border: rgba(255, 107, 107, 0.35);
-                --danger-bg: rgba(255, 107, 107, 0.12);
-                --success-btn-gradient: linear-gradient(135deg, #5CB88A 0%, #7DD3A8 100%);
-                --accent-gradient: linear-gradient(135deg, #FF6B9D, #C9A8FF);
-                --loading-overlay-bg: rgba(18, 18, 18, 0.92);
-                --preview-gps-bg: linear-gradient(135deg, rgba(92, 184, 138, 0.16), rgba(255, 107, 157, 0.1));
-            }
-        }
-
+        /* 暗色主题唯一定义：跟随系统或手动切换时由 <head> 内联脚本 / app.js 设置 data-theme */
         html[data-theme="dark"] {
             color-scheme: dark;
             --primary: #FF85B0;
@@ -212,18 +114,11 @@
             --search-focus-border: rgba(255, 133, 176, 0.5);
             --search-focus-shadow: rgba(255, 133, 176, 0.12);
             --search-highlight: rgba(255, 133, 176, 0.28);
-            --play-icon-bg: rgba(255, 255, 255, 0.2);
-            --mode-switch-bg: rgba(44, 44, 44, 0.72);
             --hover-overlay: rgba(255, 255, 255, 0.08);
             --hero-bg: linear-gradient(135deg, rgba(30, 30, 30, 0.98) 0%, rgba(40, 30, 35, 0.98) 100%);
             --summary-bg: linear-gradient(135deg, rgba(40, 30, 35, 0.96) 0%, rgba(35, 30, 45, 0.96) 100%);
-            --summary-border: rgba(255, 133, 176, 0.2);
-            --footer-bg: linear-gradient(180deg, transparent, rgba(40, 30, 35, 0.5));
-            --footer-border: rgba(255, 133, 176, 0.15);
             --meta-btn-border: rgba(255,255,255,0.15);
             --meta-btn-bg: rgba(255,255,255,0.1);
-            --note-bg: rgba(40, 30, 35, 0.62);
-            --note-border: rgba(255, 133, 176, 0.2);
             --hint-bg: rgba(40, 30, 35, 0.65);
             --empty-bg: rgba(40, 30, 35, 0.55);
             --textarea-bg: rgba(30, 30, 30, 0.78);
@@ -235,8 +130,6 @@
             --coords-bg: linear-gradient(135deg, rgba(45, 35, 40, 0.95), rgba(38, 32, 48, 0.95));
             --workflow-active-bg: linear-gradient(135deg, rgba(255, 107, 157, 0.2), rgba(179, 136, 255, 0.14));
             --gps-header-bg: linear-gradient(135deg, rgba(255, 107, 157, 0.12), rgba(179, 136, 255, 0.1));
-            --lens-panel-bg: linear-gradient(135deg, rgba(38, 32, 42, 0.98), rgba(32, 30, 40, 0.98));
-            --video-thumb-bg: linear-gradient(135deg, rgba(179, 136, 255, 0.22), rgba(255, 107, 157, 0.14));
             --thumb-accent: linear-gradient(135deg, rgba(255, 107, 157, 0.22), rgba(179, 136, 255, 0.18));
             --preview-hero-bg: linear-gradient(135deg, rgba(255, 107, 157, 0.15), rgba(179, 136, 255, 0.12));
             --preview-key-bg: linear-gradient(135deg, rgba(38, 32, 42, 0.96), rgba(32, 30, 40, 0.96));
@@ -252,9 +145,6 @@
             --preview-tag-border: rgba(92, 184, 138, 0.55);
             --preview-tag-color: #7DD3A8;
             --setting-row-border: rgba(255, 133, 176, 0.18);
-            --toggle-track: #555555;
-            --toggle-thumb: #e8e8e8;
-            --map-control-bg: #2c2c2c;
             --media-thumb-bg: #1a1a1a;
             --action-bar-bg: rgba(18, 18, 18, 0.95);
             --focus-ring: rgba(255, 133, 176, 0.22);
@@ -337,15 +227,6 @@
             align-items: center;
         }
 
-        .header-mode-switch {
-            flex-shrink: 0;
-        }
-
-        .header-mode-switch .mode-switch-btn {
-            padding: 6px 12px;
-            font-size: 12px;
-        }
-        
         .header-btn {
             background: var(--surface);
             border: 1px solid var(--border);
@@ -457,17 +338,7 @@
         .upload-area:active::before {
             opacity: 1;
         }
-        
-        .upload-area.has-file {
-            border-color: var(--success);
-            background: rgba(125, 211, 168, 0.1);
-        }
-        
-        .upload-area.is-video {
-            border-color: var(--purple);
-            background: rgba(201, 168, 255, 0.1);
-        }
-        
+
         .upload-icon-wrapper {
             width: 64px;
             height: 64px;
@@ -491,27 +362,11 @@
             fill: var(--primary);
             transition: all 0.3s;
         }
-        
+
         .upload-area:active .upload-icon {
             fill: var(--on-primary);
         }
-        
-        .upload-area.has-file .upload-icon-wrapper {
-            background: rgba(125, 211, 168, 0.3);
-        }
-        
-        .upload-area.has-file .upload-icon {
-            fill: var(--success);
-        }
-        
-        .upload-area.is-video .upload-icon-wrapper {
-            background: rgba(201, 168, 255, 0.3);
-        }
-        
-        .upload-area.is-video .upload-icon {
-            fill: var(--purple);
-        }
-        
+
         .upload-title {
             font-size: 17px;
             font-weight: 600;
@@ -597,40 +452,6 @@
             object-fit: cover;
         }
 
-        .file-item-video-thumb {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 4px;
-            background: var(--video-thumb-bg);
-            color: var(--primary-dark);
-        }
-
-        .file-item-video-thumb .play-icon {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: var(--play-icon-bg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            box-shadow: 0 2px 8px var(--shadow-color-heavy);
-        }
-
-        .file-item-video-thumb .video-label {
-            font-size: 10px;
-            font-weight: 700;
-            opacity: 0.85;
-        }
-
-        .file-item.is-video-only {
-            border-color: rgba(201, 168, 255, 0.6);
-        }
-        
         .file-item-remove {
             position: absolute;
             top: 4px;
@@ -669,36 +490,6 @@
             font-weight: 600;
             cursor: pointer;
         }
-        
-        .file-item-name {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 4px 6px;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
-            font-size: 10px;
-            color: var(--on-primary);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        /* 实况照片徽章：粉紫渐变，左下角标识 Live Photo 配对 */
-        .file-item-live-badge {
-            position: absolute;
-            bottom: 24px;
-            left: 4px;
-            background: var(--accent-gradient);
-            color: var(--on-primary);
-            font-size: 10px;
-            font-weight: 700;
-            padding: 2px 7px;
-            border-radius: 6px;
-            box-shadow: 0 1px 4px rgba(255,107,157,0.4);
-            z-index: 2;
-            letter-spacing: 0.5px;
-        }
 
         .change-image-btn {
             background: var(--surface);
@@ -710,66 +501,6 @@
             font-weight: 600;
             cursor: pointer;
             white-space: nowrap;
-        }
-        
-        
-        .presets-section {
-            display: none;
-            margin-bottom: 20px;
-        }
-        
-        .presets-section.active {
-            display: block;
-            animation: slideUp 0.3s ease;
-        }
-
-        /* 设备选择触发按钮 */
-        .device-picker-btn {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 14px 16px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            color: var(--text);
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.2s;
-            box-shadow: 0 2px 8px var(--shadow-color);
-        }
-
-        .device-picker-btn:active {
-            transform: scale(0.98);
-            background: var(--surface-light);
-        }
-
-        .device-picker-icon {
-            font-size: 18px;
-            flex-shrink: 0;
-        }
-
-        .device-picker-text {
-            flex: 1;
-            text-align: left;
-            font-weight: 500;
-            color: var(--text);
-        }
-
-        .device-picker-text.placeholder {
-            color: var(--text-secondary);
-            font-weight: 400;
-        }
-
-        .device-picker-arrow {
-            fill: var(--text-secondary);
-            transition: transform 0.2s;
-            flex-shrink: 0;
-        }
-
-        .device-picker-btn:active .device-picker-arrow {
-            transform: rotate(180deg);
         }
 
         /* 设备选择弹窗 */
@@ -825,63 +556,6 @@
             font-weight: 700;
         }
 
-        .mode-switch-section {
-            display: none;
-            margin-bottom: 12px;
-        }
-
-        .mode-switch-section.active {
-            display: block;
-            animation: slideUp 0.3s ease;
-        }
-
-        /* 工具栏行：模式切换 + 设备按钮并排 */
-        .toolbar-row {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .toolbar-row .device-picker-btn {
-            flex: 1;
-            min-width: 0;
-        }
-
-        /* 紧凑胶囊式模式切换：两按钮一行，最小占用空间 */
-        .mode-switch {
-            display: inline-flex;
-            gap: 2px;
-            padding: 3px;
-            background: var(--mode-switch-bg);
-            border: 1px solid var(--border);
-            border-radius: 999px;
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-        }
-
-        .mode-switch-btn {
-            padding: 6px 16px;
-            border: none;
-            border-radius: 999px;
-            background: transparent;
-            color: var(--text-secondary);
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.22s ease;
-            white-space: nowrap;
-        }
-
-        .mode-switch-btn:active {
-            transform: scale(0.96);
-        }
-
-        .mode-switch-btn.active {
-            background: linear-gradient(135deg, var(--primary-light) 0%, var(--surface-light) 100%);
-            color: var(--primary);
-            box-shadow: 0 2px 8px var(--shadow-color-strong);
-        }
-        
         .preset-empty {
             grid-column: 1 / -1;
             padding: 14px;
@@ -1105,84 +779,7 @@
             padding: 16px;
             border: 1px solid var(--border);
         }
-        
-        .lens-shortcuts-title {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--text-secondary);
-            margin-bottom: 12px;
-        }
 
-        .simple-device-summary {
-            margin-top: 12px;
-            padding: 12px 14px;
-            border-radius: 12px;
-            background: var(--summary-bg);
-            border: 1px solid var(--summary-border);
-            color: var(--text);
-            font-size: 13px;
-            line-height: 1.6;
-        }
-
-        .simple-device-summary strong {
-            color: var(--primary-dark);
-            font-weight: 700;
-        }
-
-        .lens-shortcuts-note {
-            margin-top: 10px;
-            padding: 10px 12px;
-            border-radius: 12px;
-            background: var(--note-bg);
-            border: 1px solid var(--note-border);
-            color: var(--text-secondary);
-            font-size: 12px;
-            line-height: 1.55;
-        }
-
-        .simple-lens-panel {
-            margin-bottom: 14px;
-            padding: 14px;
-            border-radius: 14px;
-            background: var(--lens-panel-bg);
-            border: 1px solid var(--border);
-        }
-
-        .simple-lens-panel-head {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 10px;
-            margin-bottom: 8px;
-        }
-
-        .simple-lens-panel-title {
-            font-size: 15px;
-            font-weight: 700;
-            color: var(--primary-dark);
-        }
-
-        .simple-lens-panel-spec {
-            font-size: 12px;
-            color: var(--text-secondary);
-            text-align: right;
-            line-height: 1.5;
-        }
-
-        .simple-lens-panel-model {
-            font-size: 13px;
-            color: var(--text);
-            line-height: 1.65;
-            word-break: break-word;
-        }
-
-        .simple-lens-panel-tip {
-            margin-top: 8px;
-            font-size: 12px;
-            color: var(--text-secondary);
-            line-height: 1.55;
-        }
-        
         .lens-shortcuts-btns {
             display: flex;
             flex-wrap: wrap;
@@ -1232,51 +829,7 @@
             transform: none;
         }
         
-        /* 设置标签按钮：胶囊式，高对比度，清晰可读 */
-        .form-card-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 14px;
-        }
-
-        .setting-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            padding: 8px 14px;
-            border: 1.5px solid var(--border);
-            border-radius: 999px;
-            background: var(--surface);
-            color: var(--text);
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            white-space: nowrap;
-        }
-
-        .setting-tag:active {
-            transform: scale(0.96);
-        }
-
-        .setting-tag.active {
-            background: linear-gradient(135deg, var(--primary-light) 0%, var(--surface-light) 100%);
-            border-color: var(--primary);
-            color: var(--primary-dark);
-            box-shadow: 0 2px 10px var(--shadow-color-strong);
-        }
-
-        .setting-tag.preview-tag {
-            background: var(--preview-tag-bg);
-            border-color: var(--preview-tag-border);
-            color: var(--preview-tag-color);
-        }
-
-        .setting-tag.preview-tag:active {
-            background: linear-gradient(135deg, #C8E6C9 0%, #BBDEFB 100%);
-        }
-
+        /* GPS 头部图标（旧标签栏已移除，此图标仍被 GPS 标题使用） */
         .form-card-icon {
             width: 15px;
             height: 15px;
@@ -1597,7 +1150,7 @@
             font-weight: 500;
         }
         
-        .form-input, .form-select {
+        .form-input {
             padding: 12px 14px;
             border: 1px solid var(--border);
             border-radius: 10px;
@@ -1610,7 +1163,7 @@
             -webkit-appearance: none;
         }
         
-        .form-input:focus, .form-select:focus {
+        .form-input:focus {
             outline: none;
             border-color: var(--primary);
             background: var(--surface);
@@ -1619,14 +1172,6 @@
         
         .form-input::placeholder {
             color: var(--text-tertiary);
-        }
-        
-        .form-select {
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%238E8E93'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 10px center;
-            padding-right: 40px;
         }
         
         .form-hint {
@@ -1794,19 +1339,6 @@
         }
         
         
-        .action-hint {
-            text-align: center;
-            padding: 40px 20px;
-            color: var(--text-secondary);
-        }
-        
-        .action-hint-icon {
-            font-size: 48px;
-            margin-bottom: 12px;
-            opacity: 0.5;
-        }
-        
-        
         .modal-overlay {
             display: none;
             position: fixed;
@@ -1938,10 +1470,6 @@
             color: var(--primary-dark);
         }
         
-        .download-hint.clickable {
-            cursor: pointer;
-        }
-        
         .download-list {
             display: flex;
             flex-direction: column;
@@ -2039,44 +1567,6 @@
             -webkit-touch-callout: default !important;
         }
 
-        /* 实况视频缩略图：复用配对图片预览，叠加播放图标和实况标签 */
-        .download-item-thumb-wrap {
-            position: relative;
-            display: block;
-        }
-        .download-item-video-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 44px;
-            height: 44px;
-            background: rgba(0,0,0,0.55);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--on-primary);
-            font-size: 18px;
-            padding-left: 3px;
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-        }
-        .download-item-video-tag {
-            position: absolute;
-            top: 8px;
-            left: 8px;
-            background: var(--accent-gradient);
-            color: var(--on-primary);
-            font-size: 11px;
-            font-weight: 700;
-            padding: 3px 9px;
-            border-radius: 7px;
-            box-shadow: 0 2px 6px rgba(255,107,157,0.4);
-            letter-spacing: 0.5px;
-        }
-        
-        
         .download-item-bar {
             display: flex;
             align-items: center;
@@ -2257,35 +1747,12 @@
             color: var(--on-primary);
         }
 
-        body[data-editor-mode="simple"] .mode-advanced-only {
-            display: none !important;
-        }
-
-        body[data-editor-mode="advanced"] .mode-simple-only {
-            display: none !important;
-        }
-
-        /* ===== 统一布局：新手 / 高级共用 ===== */
-        #editorModeSection,
-        .form-card-tags,
-        .simple-mode-footer {
-            display: none !important;
-        }
-
-        .lens-shortcuts-note,
-        #simpleDeviceSummary {
-            display: none !important;
-        }
-
+        /* ===== 统一布局 ===== */
         .form-sections .lens-shortcuts {
             padding: 10px;
             margin-bottom: 10px;
             border-radius: 18px;
             box-shadow: 0 4px 20px var(--shadow-color);
-        }
-
-        .form-sections .lens-shortcuts-title {
-            display: none;
         }
 
         .form-sections .lens-shortcuts-btns {
@@ -2307,10 +1774,6 @@
             width: 18px;
             height: 18px;
         }
-
-        .lens-label-short { display: none; }
-        body[data-editor-mode="simple"] .lens-label-full { display: none; }
-        body[data-editor-mode="simple"] .lens-label-short { display: inline; }
 
         .files-section .section-header {
             margin-bottom: 10px;
@@ -2373,20 +1836,8 @@
             flex-shrink: 0;
         }
 
-        .simple-hero-device.clickable {
-            cursor: pointer;
-        }
-
-        .simple-hero-device.clickable:active {
-            opacity: 0.7;
-        }
-
         .setting-row.is-ready .setting-row-value:not(.placeholder) {
             color: var(--primary);
-        }
-
-        .file-item-name {
-            display: none;
         }
 
         .gps-section-header {
@@ -2396,6 +1847,7 @@
 
         .simple-hero {
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
             gap: 14px;
             padding: 14px;
@@ -2455,6 +1907,30 @@
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
+        }
+
+        /* 主界面拍摄参数条：ISO / 等效焦距 / 曝光补偿 / 光圈 / 快门（与预览弹窗同序） */
+        .hero-param-strip {
+            flex-basis: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 2px;
+        }
+
+        .hero-param-strip[hidden] {
+            display: none;
+        }
+
+        .hero-param-chip {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--primary);
+            background: var(--primary-light);
+            border-radius: 8px;
+            padding: 3px 8px;
+            line-height: 1.4;
+            white-space: nowrap;
         }
 
         .simple-hero-preview {
@@ -2556,31 +2032,18 @@
             flex-shrink: 0;
         }
 
-        .simple-mode-footer {
-            padding: 12px 16px 14px;
+        .setting-row-clear {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--surface-light);
+            color: var(--text-tertiary);
+            font-size: 15px;
+            line-height: 24px;
             text-align: center;
-            border-top: 1px solid var(--footer-border);
-            background: var(--footer-bg);
-        }
-
-        .settings-list .setting-row + .setting-row {
-            border-top: none;
-        }
-
-        .simple-mode-link {
-            border: none;
-            background: none;
-            color: var(--text-secondary);
-            font-size: 13px;
-            font-weight: 600;
+            flex-shrink: 0;
             cursor: pointer;
-            padding: 4px 8px;
         }
-
-        .simple-mode-link:active {
-            color: var(--primary);
-        }
-
 
         .gps-map {
             width: 100%;
@@ -2615,6 +2078,16 @@
             color: var(--on-primary);
             transform: scale(0.95);
         }
+        .amap-key-link {
+            font-size: 12px;
+            color: var(--primary);
+            cursor: pointer;
+            user-select: none;
+            flex-shrink: 0;
+        }
+
+        .amap-key-link:hover { opacity: 0.75; }
+
         .gps-search-btn {
             padding: 12px 20px;
             background: var(--primary-gradient);
@@ -2754,93 +2227,6 @@
             color: var(--primary);
         }
         
-        .filesize-toggle {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .toggle-switch {
-            position: relative;
-            display: inline-block;
-            width: 48px;
-            height: 26px;
-        }
-        
-        .toggle-switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-        
-        .toggle-slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: var(--toggle-track);
-            transition: 0.3s;
-            border-radius: 26px;
-        }
-        
-        .toggle-slider:before {
-            position: absolute;
-            content: "";
-            height: 20px;
-            width: 20px;
-            left: 3px;
-            bottom: 3px;
-            background-color: var(--toggle-thumb);
-            transition: 0.3s;
-            border-radius: 50%;
-        }
-        
-        .toggle-switch input:checked + .toggle-slider {
-            background: var(--primary-gradient);
-        }
-        
-        .toggle-switch input:checked + .toggle-slider:before {
-            transform: translateX(22px);
-        }
-        
-        .toggle-label {
-            font-size: 14px;
-            color: var(--text);
-            font-weight: 500;
-        }
-        
-        .leaflet-control-zoom {
-            border: none !important;
-            box-shadow: 0 2px 12px rgba(255,107,157,0.2) !important;
-            border-radius: 12px !important;
-            overflow: hidden !important;
-        }
-        .leaflet-control-zoom a {
-            background: var(--map-control-bg) !important;
-            color: var(--primary) !important;
-            border: none !important;
-            border-bottom: 1px solid var(--border) !important;
-            width: 36px !important;
-            height: 36px !important;
-            line-height: 36px !important;
-            font-size: 18px !important;
-            font-weight: 700 !important;
-            transition: all 0.2s !important;
-        }
-        .leaflet-control-zoom a:last-child {
-            border-bottom: none !important;
-        }
-        .leaflet-control-zoom a:hover {
-            background: var(--primary-light) !important;
-            color: var(--primary) !important;
-        }
-        .leaflet-control-zoom a:active {
-            background: var(--primary) !important;
-            color: var(--on-primary) !important;
-        }
-
         html[data-theme="dark"] .gps-map {
             filter: brightness(0.9) contrast(1.08);
         }
@@ -2868,7 +2254,17 @@
         }
 
     </style>
-    <script src="theme-init.js"></script>
+    <script>
+        // 预渲染主题：已存偏好 > 系统偏好，避免暗色模式闪白（key 与 app.js THEME_STORAGE_KEY 一致）
+        (function () {
+            var theme = '';
+            try { theme = localStorage.getItem('target_theme_v1') || ''; } catch (e) {}
+            if (theme !== 'dark' && theme !== 'light') {
+                theme = (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
 </head>
 <body>    <header class="header">
         <div class="header-content">
@@ -2877,10 +2273,9 @@
                 <button class="header-btn" id="supportBtn" type="button" title="赞赏与反馈" style="font-size: 14px; padding: 0 12px; width: auto; white-space: nowrap; font-weight: 500;">
                     公告
                 </button>
-                <div class="mode-switch header-mode-switch" id="editorModeSwitch">
-                    <button type="button" class="mode-switch-btn active" data-mode="simple">萌新</button>
-                    <button type="button" class="mode-switch-btn" data-mode="advanced">高级</button>
-                </div>
+                <a class="header-btn" id="afdianHeaderBtn" href="https://afdian.com/a/xiachunyu" target="_blank" rel="noopener noreferrer" title="爱发电支持作者" style="font-size: 14px; padding: 0 12px; width: auto; white-space: nowrap; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; color: #946CEE; border-color: rgba(148, 108, 238, 0.4);">
+                    ⚡ 爱发电
+                </a>
                 <button class="header-btn header-theme-btn" id="themeToggleBtn" type="button" title="深色模式" aria-label="切换深色模式">
                     <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
                     <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -2904,8 +2299,8 @@
                     </svg>
                 </div>
                 <div class="upload-title">添加要处理的照片</div>
-                <div class="upload-subtitle">点击或拖拽 · 图片可改 EXIF · 视频可单独或与同名图片配对实况</div>
-                <input type="file" id="fileInput" accept="image/*,video/*" multiple>
+                <div class="upload-subtitle">点击或拖拽 · 修改图片 EXIF 元数据（仅支持图片）</div>
+                <input type="file" id="fileInput" accept="image/*" multiple>
             </div>
         </div>
 
@@ -2921,12 +2316,6 @@
                 </div>
             </div>
             <div class="files-list" id="filesList"></div>
-        </div>
-
-        <div class="mode-switch-section" id="editorModeSection" aria-hidden="true">
-            <button class="device-picker-btn" id="devicePickerBtn" type="button" tabindex="-1">
-                <span class="device-picker-text" id="devicePickerText">点击选择设备型号</span>
-            </button>
         </div>
 
         <!-- 设备选择弹窗 -->
@@ -2984,34 +2373,32 @@
                     <div class="simple-hero-meta" id="simpleHeroMeta">先选文件，再选设备即可导出</div>
                 </div>
                 <button type="button" class="simple-hero-preview" id="simpleHeroPreview" title="预览效果">预览</button>
+                <div class="hero-param-strip" id="simpleHeroParams" hidden></div>
             </div>
 
             <div class="lens-shortcuts">
-                <div class="lens-shortcuts-title">镜头快捷选择</div>
                 <div class="lens-shortcuts-btns" id="lensButtons">
                     <button class="lens-btn active" type="button" data-lens="main">
                         <svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="3"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-                        <span class="lens-label-full">主摄像头</span><span class="lens-label-short">主摄</span>
+                        <span>主摄像头</span>
                     </button>
                     <button class="lens-btn" type="button" data-lens="main2">
                         <svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="3"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-                        <span class="lens-label-full">主相机</span><span class="lens-label-short">主相机</span>
+                        <span>主相机</span>
                     </button>
                     <button class="lens-btn" type="button" data-lens="front">
                         <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                        <span class="lens-label-full">前置摄像头</span><span class="lens-label-short">前置</span>
+                        <span>前置摄像头</span>
                     </button>
                     <button class="lens-btn" type="button" data-lens="back">
                         <svg viewBox="0 0 24 24" width="16" height="16"><path d="M20 5h-3.17l-1.24-1.35c-.37-.41-.91-.65-1.47-.65H9.88c-.56 0-1.1.24-1.47.65L7.17 5H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-8 13c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg>
-                        <span class="lens-label-full">长焦摄像头</span><span class="lens-label-short">长焦</span>
+                        <span>长焦摄像头</span>
                     </button>
                     <button class="lens-btn" type="button" data-lens="wide">
                         <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5-9h10v2H7z"/></svg>
-                        <span class="lens-label-full">广角摄像头</span><span class="lens-label-short">广角</span>
+                        <span>广角摄像头</span>
                     </button>
                 </div>
-                <div class="lens-shortcuts-note">苹果相册里显示“主相机”或“主摄像头”，通常都表示已经识别到主镜头；真正要看的是切到长焦或广角后，是否还被回退成主镜头。</div>
-                <div class="simple-device-summary mode-simple-only" id="simpleDeviceSummary">还没选择设备预设，默认按当前参数导出。</div>
             </div>
 
             <div class="simple-settings settings-list" id="simpleSettings">
@@ -3021,6 +2408,7 @@
                         <span class="setting-row-label">拍摄设备</span>
                         <span class="setting-row-value placeholder" id="simpleDeviceValue">点击选择手机型号</span>
                     </span>
+                    <span class="setting-row-clear" id="deviceClearBtn" role="button" aria-label="清除设备与镜头参数" hidden>×</span>
                     <span class="setting-row-chevron">›</span>
                 </button>
                 <button type="button" class="setting-row" id="simpleTimeRow" data-card="time">
@@ -3047,15 +2435,15 @@
                     </span>
                     <span class="setting-row-chevron">›</span>
                 </button>
-                <button type="button" class="setting-row mode-advanced-only" id="advParamsRow" data-card="params">
-                    <span class="setting-row-icon teal">⚙️</span>
+                <button type="button" class="setting-row" id="advParamsRow" data-card="params">
+                    <span class="setting-row-icon teal">🎚</span>
                     <span class="setting-row-body">
                         <span class="setting-row-label">拍摄参数</span>
-                        <span class="setting-row-value placeholder" id="advParamsValue">光圈 · ISO · 快门</span>
+                        <span class="setting-row-value placeholder" id="advParamsValue">ISO · 快门 · 光圈 · 曝光补偿 · 等效焦距</span>
                     </span>
                     <span class="setting-row-chevron">›</span>
                 </button>
-                <button type="button" class="setting-row mode-advanced-only" id="advResolutionRow" data-card="resolution">
+                <button type="button" class="setting-row" id="advResolutionRow" data-card="resolution">
                     <span class="setting-row-icon indigo">📐</span>
                     <span class="setting-row-body">
                         <span class="setting-row-label">分辨率</span>
@@ -3073,33 +2461,6 @@
                 </button>
             </div>
 
-            <!-- 旧标签栏保留 DOM 供弹窗逻辑兼容，界面已隐藏 -->
-            <div class="form-card-tags" id="formCardTags" aria-hidden="true">
-                <button type="button" class="setting-tag active" data-card="time">
-                    <svg class="form-card-icon" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
-                    时间
-                </button>
-                <button type="button" class="setting-tag" data-card="lens">
-                    <svg class="form-card-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/></svg>
-                    镜头
-                </button>
-                <button type="button" class="setting-tag mode-advanced-only" data-card="params">
-                    <svg class="form-card-icon" viewBox="0 0 24 24"><path d="M9 4v3h5v12h3V7h5V4H9zm-6 8h3v7h3v-7h3V9H3v3z"/></svg>
-                    参数
-                </button>
-                <button type="button" class="setting-tag mode-advanced-only" data-card="resolution">
-                    <svg class="form-card-icon" viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zM5 15h14v3H5z"/></svg>
-                    分辨率                </button>
-                <button type="button" class="setting-tag" data-card="filesize">
-                    <svg class="form-card-icon" viewBox="0 0 24 24"><path d="M20 6h-8l-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V6h5.17l2 2H20v10zm-8-1c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-4-8h8v2H8z"/></svg>
-                    文件大小
-                </button>
-                <button type="button" class="setting-tag preview-tag" id="previewBtn">
-                    <svg class="form-card-icon" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
-                    预览效果
-                </button>
-            </div>
-
             <!-- GPS 区域：直接展开显示，不收起 -->
             <div class="gps-section collapsed" id="gpsSection">
                 <div class="gps-section-header" id="gpsSectionHeader">
@@ -3112,6 +2473,7 @@
                             <label class="form-label">经纬度 / 海拔（可选）</label>
                             <button type="button" class="gps-clear-btn" id="gpsClearBtn">清除</button>
                         </div>
+                        <button type="button" class="gps-search-btn" id="gpsLocateBtn" style="width:100%; margin-bottom:10px;">📍 获取当前位置</button>
                         <div class="gps-coords-grid">
                             <div class="form-group">
                                 <label class="form-label">纬度 (°)</label>
@@ -3129,10 +2491,17 @@
                         <div class="gps-coords-hint">可直接输入数字；不熟悉的话用下方搜索或点地图选点也行。</div>
                     </div>
                     <div class="form-group full-width">
-                        <label class="form-label">搜索位置</label>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                            <label class="form-label" style="margin-bottom:0;">搜索位置</label>
+                            <span class="amap-key-link" id="amapKeyToggle" role="button">自定义高德 Key</span>
+                        </div>
                         <div style="display:flex;gap:8px;">
                             <input type="text" class="form-input" id="gpsSearchInput" placeholder="搜索地点，如：上海酒店、西湖" style="flex:1;">
                             <button type="button" class="gps-search-btn" id="gpsSearchBtn">搜索</button>
+                        </div>
+                        <div id="amapKeyRow" style="display:none; margin-top:8px; gap:8px; align-items:center;">
+                            <input type="text" class="form-input" id="amapKeyInput" placeholder="填入高德 Web服务 Key，留空恢复默认" style="flex:1;" autocomplete="off">
+                            <button type="button" class="gps-search-btn" id="amapKeySave">保存</button>
                         </div>
                         <div class="gps-search-results" id="gpsSearchResults"></div>
                         <div class="gps-hot-cities" id="gpsHotCities">
@@ -3195,7 +2564,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">设备型号</label>
-                                    <input type="text" class="form-input" id="model" placeholder="如 iPhone 16 Pro">
+                                    <input type="text" class="form-input" id="model" placeholder="如 iPhone 18 Pro">
                                 </div>
                                 <div class="form-group full-width">
                                     <label class="form-label">镜头型号</label>
@@ -3206,81 +2575,80 @@
                                     <input type="text" class="form-input" id="focalLength" placeholder="如 6.765">
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label">35mm等效焦距</label>
-                                    <input type="text" class="form-input" id="focalLength35" placeholder="如 24">
-                                </div>
-                                <div class="form-group">
                                     <label class="form-label">系统版本</label>
-                                    <input type="text" class="form-input" id="software" placeholder="如 iOS 18.1">
+                                    <input type="text" class="form-input" id="software" placeholder="如 iOS 27.0">
                                 </div>
                             </div>
                         </div>
-                        <div class="settings-panel mode-advanced-only" data-panel="params" style="display:none;">
+                        <div class="settings-panel" data-panel="params" style="display:none;">
                             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
                                 <div style="font-size:14px; font-weight:600; color:var(--text);">拍摄参数</div>
                                 <button type="button" class="gps-clear-btn" id="paramsClearBtn" style="padding:4px 10px; font-size:12px;">清除</button>
                             </div>
                             <div class="form-grid">
                                 <div class="form-group">
-                                    <label class="form-label">光圈 (f/)</label>
-                                    <input type="text" class="form-input" id="fNumber" placeholder="如 1.78">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">快门速度</label>
-                                    <input type="text" class="form-input" id="exposureTime" placeholder="如 1/120">
-                                </div>
-                                <div class="form-group">
                                     <label class="form-label">感光度 (ISO)</label>
-                                    <input type="text" class="form-input" id="iso" placeholder="如 100">
+                                    <input type="number" class="form-input" id="isoInput" placeholder="如 50" min="1" inputmode="numeric">
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label">曝光补偿</label>
-                                    <input type="text" class="form-input" id="exposureBias" placeholder="如 0">
+                                    <label class="form-label">等效焦距 (mm)</label>
+                                    <input type="text" class="form-input" id="focalLength35" placeholder="如 24">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">曝光补偿 (EV)</label>
+                                    <input type="text" class="form-input" id="biasInput" placeholder="如 0.3 或 -0.7" inputmode="decimal">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">光圈 (f/)</label>
+                                    <input type="text" class="form-input" id="fNumber" placeholder="如 1.78" inputmode="decimal">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">快门速度 (s)</label>
+                                    <input type="text" class="form-input" id="shutterInput" placeholder="如 1/120">
                                 </div>
                             </div>
+                            <div class="form-hint" style="margin-top:8px;">选择设备后自动填入该机型预设参数，可手动修改；导出时按此写入 EXIF。</div>
                         </div>
-                        <div class="settings-panel mode-advanced-only" data-panel="resolution" style="display:none;">
+                        <div class="settings-panel" data-panel="resolution" style="display:none;">
                             <div class="form-group">
-                                <label class="form-label">快速选择</label>
+                                <label class="form-label">快速选择（苹果真机原生尺寸，精确输出）</label>
                                 <div class="resolution-presets" id="sizePresetButtons">
-                                    <button type="button" class="resolution-btn" data-height="4032" data-width="3024">12MP (4032×3024)</button>
-                                    <button type="button" class="resolution-btn" data-height="4000" data-width="3000">12MP (4000×3000)</button>
-                                    <button type="button" class="resolution-btn" data-height="5712" data-width="4284">24MP (5712×4284)</button>
-                                    <button type="button" class="resolution-btn" data-height="8064" data-width="6048">48MP (8064×6048)</button>
+                                    <button type="button" class="resolution-btn selected" data-original="1">保持原始</button>
+                                    <button type="button" class="resolution-btn" data-width="4032" data-height="3024">12 MP</button>
+                                    <button type="button" class="resolution-btn" data-width="5712" data-height="4284">24 MP</button>
+                                    <button type="button" class="resolution-btn" data-width="8064" data-height="6048">48 MP</button>
                                 </div>
                             </div>
                             <div class="form-grid" style="margin-top: 12px;">
                                 <div class="form-group">
-                                    <label class="form-label">高度 (px)</label>
-                                    <input type="number" class="form-input" id="imageHeight" placeholder="如 4032">
+                                    <label class="form-label">宽度 (px)</label>
+                                    <input type="number" class="form-input" id="imageWidth" placeholder="如 4032">
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label">宽度 (px)</label>
-                                    <input type="number" class="form-input" id="imageWidth" placeholder="如 3024">
+                                    <label class="form-label">高度 (px)</label>
+                                    <input type="number" class="form-input" id="imageHeight" placeholder="如 3024">
                                 </div>
                             </div>
-                            <div class="form-hint" style="margin-top: 8px;">EXIF 分辨率会与实际像素保持一致，系统会自动保持原图比例防变形。</div>
+                            <div class="form-hint" style="margin-top: 8px;">选定后无论原图比例都精确输出该像素（与真机一致），EXIF 分辨率与实际像素同步。</div>
                         </div>
                         <div class="settings-panel" data-panel="filesize" style="display:none;">
                             <div class="form-group full-width">
-                                <label class="form-label">快捷增加</label>
+                                <label class="form-label">目标体积（常见档位，精确逼近）</label>
                                 <div class="filesize-btns">
-                                    <button type="button" class="filesize-btn active" data-size="2.5">+2.5MB</button>
-                                    <button type="button" class="filesize-btn" data-size="3.5">+3.5MB</button>
-                                    <button type="button" class="filesize-btn" data-size="5">+5MB</button>
+                                    <button type="button" class="filesize-btn active" data-follow="1">跟随原图</button>
+                                    <button type="button" class="filesize-btn" data-size="2.4">2.4MB</button>
+                                    <button type="button" class="filesize-btn" data-size="4.7">4.7MB</button>
+                                    <button type="button" class="filesize-btn" data-size="6.6">6.6MB</button>
+                                    <button type="button" class="filesize-btn" data-size="8.9">8.9MB</button>
+                                    <button type="button" class="filesize-btn" data-size="16.3">16.3MB</button>
+                                    <button type="button" class="filesize-btn" data-size="24.6">24.6MB</button>
                                 </div>
                             </div>
                             <div class="form-group full-width" style="margin-top:12px;">
-                                <label class="form-label">自定义大小 (MB)</label>
-                                <input type="number" class="form-input" id="customFileSize" placeholder="输入要增加的大小" step="0.1" min="0" value="2.5">
+                                <label class="form-label">自定义目标体积 (MB)，留空跟随原图</label>
+                                <input type="number" class="form-input" id="customFileSize" placeholder="0.1 - 2048" step="0.1" min="0.1" max="2048" value="">
                             </div>
-                            <div class="filesize-toggle" style="margin-top:12px;">
-                                <label class="toggle-switch">
-                                    <input type="checkbox" id="fileSizeEnabled">
-                                    <span class="toggle-slider"></span>
-                                </label>
-                                <span class="toggle-label">启用文件大小调整</span>
-                            </div>
+                            <div class="form-hint" style="margin-top:10px;">选定档位后用 JPEG 标准注释段无损填充精确逼近目标（十进制 MB，与相册一致）；原图已超过目标时跳过填充。留空或选「跟随原图」则保持导出体积不变。</div>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -3366,7 +2734,7 @@
                 <button class="modal-close" id="supportClose" style="background: var(--surface-light); border-radius: 50%;">×</button>
             </div>
             <div class="modal-body" style="padding: 12px 20px 24px;">
-                <div class="notice-highlight">🎉 进群就支持实况 &amp; 视频修改哦~qq等级太低进不去哦</div>
+                <div class="notice-highlight">🎉 进群就支持实况视频修改哦~qq等级太低进不去哦</div>
                 <div style="font-size: 13px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 18px; font-weight: 400; letter-spacing: 0.3px; padding: 12px; background: rgba(255, 255, 255, 0.4); border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);">
                     承接各类定制项目（网站、App等），有想法随时联系，好说话哦~<br>
                     服务器维持需要成本，有能力的宝宝可以支持一下呀，爱你们！<br>
@@ -3375,6 +2743,7 @@
                 <img src="https://yz.yhcn.top/vx.jpg" alt="赞赏码" style="width: 100%; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 20px;">
                 
                 <div style="display: flex; gap: 10px; flex-direction: column;">
+                    <a class="btn btn-primary" id="afdianBtn" href="https://afdian.com/a/xiachunyu" target="_blank" rel="noopener noreferrer" style="width: 100%; font-size: 14px; padding: 10px 0; border-radius: 10px; font-weight: 500; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; background: linear-gradient(135deg, #946CEE 0%, #B18CFF 100%); box-shadow: 0 2px 8px rgba(148, 108, 238, 0.35);">⚡ 爱发电支持作者</a>
                     <a class="btn btn-primary" id="joinGroupBtn" href="#" target="_blank" rel="noopener noreferrer" style="width: 100%; font-size: 14px; padding: 10px 0; border-radius: 10px; font-weight: 500; display: inline-flex; align-items: center; justify-content: center; text-decoration: none;">加入交流群</a>
                     <button class="btn btn-secondary" id="hideSupportTodayBtn" style="width: 100%; font-size: 14px; padding: 10px 0; border-radius: 10px; background: var(--surface-light); border: 1px solid var(--border); color: var(--text-secondary);">今日不再提示</button>
                 </div>
