@@ -42,11 +42,6 @@
             --hover-overlay: rgba(0, 0, 0, 0.04);
             --hero-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 244, 248, 0.98) 100%);
             --summary-bg: linear-gradient(135deg, rgba(255, 244, 248, 0.96) 0%, rgba(245, 239, 255, 0.96) 100%);
-            --meta-btn-border: rgba(255,255,255,0.35);
-            --meta-btn-bg: rgba(255,255,255,0.2);
-            --hint-bg: rgba(255,255,255,0.65);
-            --empty-bg: rgba(255,255,255,0.55);
-            --textarea-bg: rgba(255,255,255,0.78);
             --on-primary: #ffffff;
             --primary-gradient: linear-gradient(135deg, #FF6B9D 0%, #FF9EC4 100%);
             --chip-active-bg: linear-gradient(135deg, #FFE4ED 0%, #FFD6E5 100%);
@@ -117,11 +112,6 @@
             --hover-overlay: rgba(255, 255, 255, 0.08);
             --hero-bg: linear-gradient(135deg, rgba(30, 30, 30, 0.98) 0%, rgba(40, 30, 35, 0.98) 100%);
             --summary-bg: linear-gradient(135deg, rgba(40, 30, 35, 0.96) 0%, rgba(35, 30, 45, 0.96) 100%);
-            --meta-btn-border: rgba(255,255,255,0.15);
-            --meta-btn-bg: rgba(255,255,255,0.1);
-            --hint-bg: rgba(40, 30, 35, 0.65);
-            --empty-bg: rgba(40, 30, 35, 0.55);
-            --textarea-bg: rgba(30, 30, 30, 0.78);
             --on-primary: #ffffff;
             --primary-gradient: linear-gradient(135deg, #FF6B9D 0%, #FF9EC4 100%);
             --chip-active-bg: linear-gradient(135deg, rgba(255, 107, 157, 0.28), rgba(255, 107, 157, 0.14));
@@ -437,58 +427,44 @@
         .file-item {
             position: relative;
             aspect-ratio: 1;
-            flex: 0 0 72px;
-            width: 72px;
+            flex: 0 0 168px;
+            width: 168px;
             scroll-snap-align: start;
-            border-radius: 14px;
+            border-radius: 16px;
             overflow: hidden;
             background: var(--surface);
             border: 1px solid var(--border);
         }
-        
+
         .file-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
+        .file-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            cursor: pointer;
+        }
+
         .file-item-remove {
             position: absolute;
-            top: 4px;
-            right: 4px;
-            width: 22px;
-            height: 22px;
+            top: 5px;
+            right: 5px;
+            width: 24px;
+            height: 24px;
             background: rgba(255,107,157,0.9);
             border: none;
             border-radius: 50%;
             color: var(--on-primary);
-            font-size: 14px;
+            font-size: 15px;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-
-        .file-item-actions {
-            position: absolute;
-            top: 4px;
-            left: 4px;
-            display: flex;
-            gap: 6px;
-            z-index: 2;
-        }
-
-        .file-item-meta-btn {
-            height: 24px;
-            padding: 0 8px;
-            border: 1px solid var(--meta-btn-border);
-            border-radius: 999px;
-            background: var(--meta-btn-bg);
-            backdrop-filter: blur(10px);
-            color: var(--on-primary);
-            font-size: 11px;
-            font-weight: 600;
-            cursor: pointer;
         }
 
         .change-image-btn {
@@ -917,7 +893,7 @@
         .preview-hero {
             position: relative;
             width: 100%;
-            aspect-ratio: 16 / 10;
+            aspect-ratio: 4 / 3;
             background: var(--preview-hero-bg);
             overflow: hidden;
         }
@@ -927,10 +903,17 @@
             object-fit: cover;
             display: block;
         }
+        .preview-hero video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
         .preview-hero-mask {
             position: absolute;
             inset: 0;
             background: linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,0.6) 100%);
+            pointer-events: none;
         }
         .preview-hero-info {
             position: absolute;
@@ -938,6 +921,7 @@
             right: 16px;
             bottom: 12px;
             color: var(--on-primary);
+            pointer-events: none;
         }
         .preview-hero-model {
             font-size: 20px;
@@ -1476,78 +1460,6 @@
             gap: 12px;
         }
 
-        .metadata-modal-content {
-            max-width: 720px;
-        }
-
-        .metadata-hint {
-            padding: 10px 12px;
-            margin-bottom: 12px;
-            background: var(--hint-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            color: var(--text-secondary);
-            font-size: 13px;
-            line-height: 1.55;
-        }
-
-        .metadata-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
-            margin-bottom: 12px;
-        }
-
-        .metadata-card {
-            padding: 12px;
-            border-radius: 14px;
-            border: 1px solid var(--border);
-            background: var(--surface-light);
-        }
-
-        .metadata-label {
-            margin-bottom: 6px;
-            color: var(--text-secondary);
-            font-size: 12px;
-        }
-
-        .metadata-value {
-            color: var(--text);
-            font-size: 14px;
-            font-weight: 600;
-            word-break: break-word;
-            white-space: pre-wrap;
-        }
-
-        .metadata-empty {
-            padding: 20px 14px;
-            border: 1px dashed var(--border);
-            border-radius: 14px;
-            background: var(--empty-bg);
-            color: var(--text-secondary);
-            text-align: center;
-            line-height: 1.7;
-        }
-
-        .metadata-raw-title {
-            margin: 14px 0 8px;
-            color: var(--text);
-            font-size: 14px;
-            font-weight: 700;
-        }
-
-        .metadata-raw {
-            width: 100%;
-            min-height: 220px;
-            padding: 12px;
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            background: var(--textarea-bg);
-            color: var(--text);
-            font: 12px/1.6 Consolas, Monaco, monospace;
-            resize: vertical;
-        }
-        
         .download-item {
             position: relative;
             display: flex;
@@ -1859,22 +1771,29 @@
         }
 
         .simple-hero-thumb {
-            width: 64px;
-            height: 64px;
-            border-radius: 16px;
+            width: 84px;
+            height: 84px;
+            border-radius: 18px;
             overflow: hidden;
             flex-shrink: 0;
             background: var(--thumb-accent);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 26px;
+            font-size: 32px;
         }
 
         .simple-hero-thumb img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        .simple-hero-thumb video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .simple-hero-info {
@@ -1975,6 +1894,16 @@
         }
 
         .setting-row:last-of-type {
+            border-bottom: none;
+        }
+
+        /* 行级 hidden 需显式覆盖 flex，否则 hidden 属性失效 */
+        .setting-row[hidden] {
+            display: none;
+        }
+
+        /* 隐藏行前面的那行承接「最后一行」样式（否则卡片底部多出一条分隔线） */
+        .setting-row[hidden] + .setting-row {
             border-bottom: none;
         }
 
@@ -2298,9 +2227,9 @@
                         <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/>
                     </svg>
                 </div>
-                <div class="upload-title">添加要处理的照片</div>
-                <div class="upload-subtitle">点击或拖拽 · 修改图片 EXIF 元数据（仅支持图片）</div>
-                <input type="file" id="fileInput" accept="image/*" multiple>
+                <div class="upload-title">添加要处理的照片或视频</div>
+                <div class="upload-subtitle">点击或拖拽 · JPG / PNG / HEIC / MOV / MP4</div>
+                <input type="file" id="fileInput" accept="image/*,.mov,.mp4,.m4v" multiple>
             </div>
         </div>
 
@@ -2459,6 +2388,22 @@
                     </span>
                     <span class="setting-row-chevron">›</span>
                 </button>
+                <button type="button" class="setting-row" id="exportNamingRow" data-card="naming">
+                    <span class="setting-row-icon indigo">🏷️</span>
+                    <span class="setting-row-body">
+                        <span class="setting-row-label">导出命名</span>
+                        <span class="setting-row-value" id="exportNamingValue">保持原名</span>
+                    </span>
+                    <span class="setting-row-chevron">›</span>
+                </button>
+                <button type="button" class="setting-row" id="simpleVideoRow" data-card="video" hidden>
+                    <span class="setting-row-icon indigo">🎬</span>
+                    <span class="setting-row-body">
+                        <span class="setting-row-label">视频信息</span>
+                        <span class="setting-row-value placeholder" id="simpleVideoValue">描述 · 版权</span>
+                    </span>
+                    <span class="setting-row-chevron">›</span>
+                </button>
             </div>
 
             <!-- GPS 区域：直接展开显示，不收起 -->
@@ -2607,7 +2552,7 @@
                                     <input type="text" class="form-input" id="shutterInput" placeholder="如 1/120">
                                 </div>
                             </div>
-                            <div class="form-hint" style="margin-top:8px;">选择设备后自动填入该机型预设参数，可手动修改；导出时按此写入 EXIF。</div>
+                            <div class="form-hint" style="margin-top:8px;">选择设备后自动填入，可手动修改。</div>
                         </div>
                         <div class="settings-panel" data-panel="resolution" style="display:none;">
                             <div class="form-group">
@@ -2629,7 +2574,7 @@
                                     <input type="number" class="form-input" id="imageHeight" placeholder="如 3024">
                                 </div>
                             </div>
-                            <div class="form-hint" style="margin-top: 8px;">选定后无论原图比例都精确输出该像素（与真机一致），EXIF 分辨率与实际像素同步。</div>
+                            <div class="form-hint" style="margin-top: 8px;">输出为所选的精确像素尺寸。</div>
                         </div>
                         <div class="settings-panel" data-panel="filesize" style="display:none;">
                             <div class="form-group full-width">
@@ -2648,7 +2593,28 @@
                                 <label class="form-label">自定义目标体积 (MB)，留空跟随原图</label>
                                 <input type="number" class="form-input" id="customFileSize" placeholder="0.1 - 2048" step="0.1" min="0.1" max="2048" value="">
                             </div>
-                            <div class="form-hint" style="margin-top:10px;">选定档位后用 JPEG 标准注释段无损填充精确逼近目标（十进制 MB，与相册一致）；原图已超过目标时跳过填充。留空或选「跟随原图」则保持导出体积不变。</div>
+                            <div class="form-hint" style="margin-top:10px;">调整导出文件体积；原图已超过目标时跳过。留空或选「跟随原图」则保持不变。</div>
+                        </div>
+                        <div class="settings-panel" data-panel="naming" style="display:none;">
+                            <div class="form-group full-width">
+                                <label class="form-label">下载文件命名</label>
+                                <div class="filesize-btns">
+                                    <button type="button" class="filesize-btn active" data-naming="original">保持原名</button>
+                                    <button type="button" class="filesize-btn" data-naming="standard">IMG 标准名</button>
+                                </div>
+                            </div>
+                            <div class="form-hint" style="margin-top:10px;">保持原名 = 沿用原文件名；IMG 标准名 = 随机 IMG_XXXX。设置会记住，全局生效。</div>
+                        </div>
+                        <div class="settings-panel" data-panel="video" style="display:none;">
+                            <div class="form-group full-width">
+                                <label class="form-label">视频描述（QuickTime 描述）</label>
+                                <input type="text" class="form-input" id="videoCaption" placeholder="留空则不写入">
+                            </div>
+                            <div class="form-group full-width" style="margin-top:12px;">
+                                <label class="form-label">视频版权（QuickTime 版权）</label>
+                                <input type="text" class="form-input" id="videoCopyright" placeholder="留空则不写入">
+                            </div>
+                            <div class="form-hint" style="margin-top:10px;">填写后写入视频副本，画面不重新编码、不损画质。</div>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -2705,24 +2671,6 @@
                 <button class="btn btn-secondary" id="shareAllBtn" type="button" hidden>分享</button>
                 <button class="btn btn-secondary" id="downloadAllBtn">逐个下载</button>
                 <button class="btn btn-primary" id="downloadZipBtn">打包 ZIP</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal-overlay" id="metadataModal">
-        <div class="modal-content metadata-modal-content">
-            <div class="modal-header">
-                <span class="modal-title" id="metadataTitle">当前图片元数据</span>
-                <button class="modal-close" id="metadataClose">×</button>
-            </div>
-            <div class="modal-body">
-                <div class="metadata-hint">先看这里：`LensModel / UserComment / XPComment / FocalLength`，既能核对苹果识别链路，也能检查中文直写是否落进去。</div>
-                <div id="metadataSummary"></div>
-                <div class="metadata-raw-title">原始元数据</div>
-                <textarea class="metadata-raw" id="metadataRaw" readonly placeholder="选择图片后，点左上角“元数据”即可查看。"></textarea>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" id="copyMetadataBtn">复制元数据</button>
             </div>
         </div>
     </div>
