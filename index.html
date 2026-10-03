@@ -1253,6 +1253,7 @@
             align-items: center;
             flex-direction: column;
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
         
         .loading-overlay.active {
@@ -2182,6 +2183,41 @@
             50% { transform: scale(1.03); }
         }
 
+        /* 小程序悬浮按钮：全局右侧，胶囊竖排（低于弹窗 1000，高于页面内容） */
+        .mini-program-fab {
+            position: fixed;
+            right: 10px;
+            bottom: calc(130px + env(safe-area-inset-bottom));
+            z-index: 110;
+            writing-mode: vertical-rl;
+            letter-spacing: 3px;
+            padding: 14px 9px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #fff;
+            background: linear-gradient(135deg, #946CEE 0%, #B18CFF 100%);
+            border: none;
+            border-radius: 999px;
+            box-shadow: 0 4px 14px rgba(148, 108, 238, 0.4);
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .mini-program-fab:active {
+            transform: scale(0.92);
+        }
+        /* 赞赏按钮叠在小程序上方（小程序高约 76px + 间距 10px） */
+        .mini-program-fab.donate {
+            bottom: calc(216px + env(safe-area-inset-bottom));
+            background: linear-gradient(135deg, #FF6B9D 0%, #FF85B0 100%);
+            box-shadow: 0 4px 14px rgba(255, 107, 157, 0.4);
+        }
+        /* 紧凑居中弹窗（公告/小程序/赞赏共用） */
+        .modal-compact .modal-content { max-width: 300px; text-align: center; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+        .modal-compact .modal-header { border-bottom: none; padding-bottom: 8px; }
+        .modal-compact .modal-title { font-weight: 500; font-size: 16px; }
+        .modal-compact .modal-close { background: var(--surface-light); border-radius: 50%; }
+        .modal-compact .modal-body { padding: 12px 20px 24px; }
     </style>
     <script>
         // 预渲染主题：已存偏好 > 系统偏好，避免暗色模式闪白（key 与 app.js THEME_STORAGE_KEY 一致）
@@ -2202,7 +2238,7 @@
                 <button class="header-btn" id="supportBtn" type="button" title="赞赏与反馈" style="font-size: 14px; padding: 0 12px; width: auto; white-space: nowrap; font-weight: 500;">
                     公告
                 </button>
-                <a class="header-btn" id="afdianHeaderBtn" href="https://afdian.com/a/xiachunyu" target="_blank" rel="noopener noreferrer" title="爱发电支持作者" style="font-size: 14px; padding: 0 12px; width: auto; white-space: nowrap; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; color: #946CEE; border-color: rgba(148, 108, 238, 0.4);">
+                <a class="header-btn" href="https://afdian.com/a/xiachunyu" target="_blank" rel="noopener noreferrer" title="爱发电支持作者" style="font-size: 14px; padding: 0 12px; width: auto; white-space: nowrap; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; color: #946CEE; border-color: rgba(148, 108, 238, 0.4);">
                     ⚡ 爱发电
                 </a>
                 <button class="header-btn header-theme-btn" id="themeToggleBtn" type="button" title="深色模式" aria-label="切换深色模式">
@@ -2259,7 +2295,7 @@
                         <div class="recent-devices-title">最近使用</div>
                         <div class="recent-devices-list" id="recentDevicesList"></div>
                     </div>
-                    <div class="preset-tabs" id="presetTabs">
+                    <div class="preset-tabs">
                         <button class="preset-tab active" data-brand="apple">🍎 Apple</button>
                         <button class="preset-tab" data-brand="vivo">vivo</button>
                         <button class="preset-tab" data-brand="iqoo">iQOO</button>
@@ -2295,7 +2331,7 @@
                 <span class="workflow-step" data-step="export">4 导出</span>
             </div>
 
-            <div class="simple-hero" id="simpleHero">
+            <div class="simple-hero">
                 <div class="simple-hero-thumb" id="simpleHeroThumb">📷</div>
                 <div class="simple-hero-info">
                     <div class="simple-hero-device placeholder" id="simpleHeroDevice">选择拍摄设备</div>
@@ -2340,7 +2376,7 @@
                     <span class="setting-row-clear" id="deviceClearBtn" role="button" aria-label="清除设备与镜头参数" hidden>×</span>
                     <span class="setting-row-chevron">›</span>
                 </button>
-                <button type="button" class="setting-row" id="simpleTimeRow" data-card="time">
+                <button type="button" class="setting-row" id="simpleTimeRow">
                     <span class="setting-row-icon blue">🕐</span>
                     <span class="setting-row-body">
                         <span class="setting-row-label">拍摄时间</span>
@@ -2356,7 +2392,7 @@
                     </span>
                     <span class="setting-row-chevron">›</span>
                 </button>
-                <button type="button" class="setting-row" id="advLensRow" data-card="lens">
+                <button type="button" class="setting-row" id="advLensRow">
                     <span class="setting-row-icon orange">🔭</span>
                     <span class="setting-row-body">
                         <span class="setting-row-label">镜头详情</span>
@@ -2364,7 +2400,7 @@
                     </span>
                     <span class="setting-row-chevron">›</span>
                 </button>
-                <button type="button" class="setting-row" id="advParamsRow" data-card="params">
+                <button type="button" class="setting-row" id="advParamsRow">
                     <span class="setting-row-icon teal">🎚</span>
                     <span class="setting-row-body">
                         <span class="setting-row-label">拍摄参数</span>
@@ -2372,7 +2408,7 @@
                     </span>
                     <span class="setting-row-chevron">›</span>
                 </button>
-                <button type="button" class="setting-row" id="advResolutionRow" data-card="resolution">
+                <button type="button" class="setting-row" id="advResolutionRow">
                     <span class="setting-row-icon indigo">📐</span>
                     <span class="setting-row-body">
                         <span class="setting-row-label">分辨率</span>
@@ -2380,7 +2416,7 @@
                     </span>
                     <span class="setting-row-chevron">›</span>
                 </button>
-                <button type="button" class="setting-row" id="simpleFilesizeRow" data-card="filesize">
+                <button type="button" class="setting-row" id="simpleFilesizeRow">
                     <span class="setting-row-icon purple">📦</span>
                     <span class="setting-row-body">
                         <span class="setting-row-label">文件大小</span>
@@ -2388,15 +2424,15 @@
                     </span>
                     <span class="setting-row-chevron">›</span>
                 </button>
-                <button type="button" class="setting-row" id="exportNamingRow" data-card="naming">
+                <button type="button" class="setting-row" id="exportNamingRow">
                     <span class="setting-row-icon indigo">🏷️</span>
                     <span class="setting-row-body">
                         <span class="setting-row-label">导出命名</span>
-                        <span class="setting-row-value" id="exportNamingValue">保持原名</span>
+                        <span class="setting-row-value" id="exportNamingValue">IMG 标准名</span>
                     </span>
                     <span class="setting-row-chevron">›</span>
                 </button>
-                <button type="button" class="setting-row" id="simpleVideoRow" data-card="video" hidden>
+                <button type="button" class="setting-row" id="simpleVideoRow" hidden>
                     <span class="setting-row-icon indigo">🎬</span>
                     <span class="setting-row-body">
                         <span class="setting-row-label">视频信息</span>
@@ -2449,19 +2485,19 @@
                             <button type="button" class="gps-search-btn" id="amapKeySave">保存</button>
                         </div>
                         <div class="gps-search-results" id="gpsSearchResults"></div>
-                        <div class="gps-hot-cities" id="gpsHotCities">
-                            <button type="button" class="gps-city-btn" data-lat="31.2304" data-lng="121.4737" data-label="上海" data-name="上海">上海</button>
-                            <button type="button" class="gps-city-btn" data-lat="39.9042" data-lng="116.4074" data-label="北京" data-name="北京">北京</button>
-                            <button type="button" class="gps-city-btn" data-lat="23.1291" data-lng="113.2644" data-label="广东省 · 广州" data-name="广州">广州</button>
-                            <button type="button" class="gps-city-btn" data-lat="22.5431" data-lng="114.0579" data-label="广东省 · 深圳" data-name="深圳">深圳</button>
-                            <button type="button" class="gps-city-btn" data-lat="30.5728" data-lng="104.0668" data-label="四川省 · 成都" data-name="成都">成都</button>
-                            <button type="button" class="gps-city-btn" data-lat="30.2741" data-lng="120.1551" data-label="浙江省 · 杭州" data-name="杭州">杭州</button>
-                            <button type="button" class="gps-city-btn" data-lat="32.0603" data-lng="118.7969" data-label="江苏省 · 南京" data-name="南京">南京</button>
-                            <button type="button" class="gps-city-btn" data-lat="29.5630" data-lng="106.5516" data-label="重庆市" data-name="重庆">重庆</button>
-                            <button type="button" class="gps-city-btn" data-lat="30.5928" data-lng="114.3055" data-label="湖北省 · 武汉" data-name="武汉">武汉</button>
-                            <button type="button" class="gps-city-btn" data-lat="34.3416" data-lng="108.9398" data-label="陕西省 · 西安" data-name="西安">西安</button>
-                            <button type="button" class="gps-city-btn" data-lat="28.2282" data-lng="112.9388" data-label="湖南省 · 长沙" data-name="长沙">长沙</button>
-                            <button type="button" class="gps-city-btn" data-lat="18.2528" data-lng="109.5120" data-label="海南省 · 三亚" data-name="三亚">三亚</button>
+                        <div class="gps-hot-cities">
+                            <button type="button" class="gps-city-btn" data-lat="31.2304" data-lng="121.4737" data-label="上海">上海</button>
+                            <button type="button" class="gps-city-btn" data-lat="39.9042" data-lng="116.4074" data-label="北京">北京</button>
+                            <button type="button" class="gps-city-btn" data-lat="23.1291" data-lng="113.2644" data-label="广东省 · 广州">广州</button>
+                            <button type="button" class="gps-city-btn" data-lat="22.5431" data-lng="114.0579" data-label="广东省 · 深圳">深圳</button>
+                            <button type="button" class="gps-city-btn" data-lat="30.5728" data-lng="104.0668" data-label="四川省 · 成都">成都</button>
+                            <button type="button" class="gps-city-btn" data-lat="30.2741" data-lng="120.1551" data-label="浙江省 · 杭州">杭州</button>
+                            <button type="button" class="gps-city-btn" data-lat="32.0603" data-lng="118.7969" data-label="江苏省 · 南京">南京</button>
+                            <button type="button" class="gps-city-btn" data-lat="29.5630" data-lng="106.5516" data-label="重庆市">重庆</button>
+                            <button type="button" class="gps-city-btn" data-lat="30.5928" data-lng="114.3055" data-label="湖北省 · 武汉">武汉</button>
+                            <button type="button" class="gps-city-btn" data-lat="34.3416" data-lng="108.9398" data-label="陕西省 · 西安">西安</button>
+                            <button type="button" class="gps-city-btn" data-lat="28.2282" data-lng="112.9388" data-label="湖南省 · 长沙">长沙</button>
+                            <button type="button" class="gps-city-btn" data-lat="18.2528" data-lng="109.5120" data-label="海南省 · 三亚">三亚</button>
                         </div>
                     </div>
                     <div class="form-group full-width" style="margin-top:12px;">
@@ -2484,7 +2520,7 @@
                         <span class="modal-title" id="settingsModalTitle">时间设置</span>
                         <button class="modal-close" id="settingsModalClose" type="button">×</button>
                     </div>
-                    <div class="modal-body settings-modal-body" id="settingsModalBody">
+                    <div class="modal-body settings-modal-body">
                         <div class="settings-panel" data-panel="time">
                             <div class="form-group">
                                 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
@@ -2557,7 +2593,7 @@
                         <div class="settings-panel" data-panel="resolution" style="display:none;">
                             <div class="form-group">
                                 <label class="form-label">快速选择（苹果真机原生尺寸，精确输出）</label>
-                                <div class="resolution-presets" id="sizePresetButtons">
+                                <div class="resolution-presets">
                                     <button type="button" class="resolution-btn selected" data-original="1">保持原始</button>
                                     <button type="button" class="resolution-btn" data-width="4032" data-height="3024">12 MP</button>
                                     <button type="button" class="resolution-btn" data-width="5712" data-height="4284">24 MP</button>
@@ -2599,8 +2635,8 @@
                             <div class="form-group full-width">
                                 <label class="form-label">下载文件命名</label>
                                 <div class="filesize-btns">
-                                    <button type="button" class="filesize-btn active" data-naming="original">保持原名</button>
-                                    <button type="button" class="filesize-btn" data-naming="standard">IMG 标准名</button>
+                                    <button type="button" class="filesize-btn" data-naming="original">保持原名</button>
+                                    <button type="button" class="filesize-btn active" data-naming="standard">IMG 标准名</button>
                                 </div>
                             </div>
                             <div class="form-hint" style="margin-top:10px;">保持原名 = 沿用原文件名；IMG 标准名 = 随机 IMG_XXXX。设置会记住，全局生效。</div>
@@ -2634,7 +2670,14 @@
                 </div>
             </div>
 
-            <div class="site-footer" style="text-align: center; padding: 30px 0 100px; font-size: 12px; color: var(--text-secondary); opacity: 0.8; margin-top: 20px;">
+            <div style="margin: 24px 16px 0; padding: 24px 20px; text-align: center; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; box-shadow: 0 4px 16px rgba(0,0,0,0.04);">
+                <div style="font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 6px;">📱 微信小程序版</div>
+                <div style="font-size: 13px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px;">手机端推荐直接用小程序<br>即开即用 · 免安装 · 和网页版一样免费</div>
+                <img src="https://yz.yhcn.top/xcx.jpg" alt="微信小程序码" loading="lazy" style="width: 180px; height: 180px; border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
+                <div style="font-size: 12px; color: var(--text-secondary); margin-top: 14px; line-height: 1.7;">长按保存图片，打开微信「扫一扫」识别使用</div>
+            </div>
+
+            <div class="site-footer" style="text-align: center; padding: 24px 0 100px; font-size: 12px; color: var(--text-secondary); opacity: 0.8; margin-top: 0;">
                 <span>总访问量 <span id="busuanzi_value_site_pv" style="font-weight: 600; color: var(--primary);"></span> 次</span>
                 <span style="margin: 0 10px; opacity: 0.5;">|</span>
                 <span>总访客数 <span id="busuanzi_value_site_uv" style="font-weight: 600; color: var(--primary);"></span> 人</span>
@@ -2675,26 +2718,74 @@
         </div>
     </div>
 
-    <div class="modal-overlay" id="supportModal">
-        <div class="modal-content" style="max-width: 300px; text-align: center; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.06); background: var(--surface); border: 1px solid var(--border);">
-            <div class="modal-header" style="border-bottom: none; padding-bottom: 8px;">
-                <span class="modal-title" style="font-weight: 500; font-size: 16px;">公告与赞赏</span>
-                <button class="modal-close" id="supportClose" style="background: var(--surface-light); border-radius: 50%;">×</button>
+    <div class="modal-overlay modal-compact" id="supportModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title">公告</span>
+                <button class="modal-close" id="supportClose">×</button>
             </div>
-            <div class="modal-body" style="padding: 12px 20px 24px;">
-                <div class="notice-highlight">🎉 进群就支持实况视频修改哦~qq等级太低进不去哦</div>
+            <div class="modal-body">
+                <div class="notice-highlight">💗 多用用小程序吧~ 你的每一次使用，都在帮作者攒服务器费用呀<br>
+                小程序支持图片跟视频哦<br>实况请进群</div>
                 <div style="font-size: 13px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 18px; font-weight: 400; letter-spacing: 0.3px; padding: 12px; background: rgba(255, 255, 255, 0.4); border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);">
-                    承接各类定制项目（网站、App等），有想法随时联系，好说话哦~<br>
-                    服务器维持需要成本，有能力的宝宝可以支持一下呀，爱你们！<br>
-                    有问题或建议也欢迎进群交流，等你们哦~
+                    服务器需要成本，有能力的宝宝们支持一下呀<br>
+                    谢谢宝宝们支持爱你们哦<br>
+                    有问题或建议欢迎进群交流，等你们哦~
+                </div>
+
+                <div style="display: flex; gap: 10px; flex-direction: column;">
+                    <button type="button" class="btn btn-primary" id="supportGoMiniProgram" style="width: 100%; font-size: 14px; padding: 10px 0; border-radius: 10px; font-weight: 500;">📱 去用小程序</button>
+                    <button type="button" class="btn btn-primary" id="groupListBtn" style="width: 100%; font-size: 14px; padding: 10px 0; border-radius: 10px; font-weight: 500;">💬 加入交流群</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay modal-compact" id="groupListModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title">💬 交流群</span>
+                <button class="modal-close" id="groupListClose">×</button>
+            </div>
+            <div class="modal-body">
+                <a class="btn btn-primary" href="https://qm.qq.com/q/EICoAHA0Tu" target="_blank" rel="noopener noreferrer" style="width: 100%; font-size: 14px; padding: 10px 0; border-radius: 10px; font-weight: 500; display: inline-flex; align-items: center; justify-content: center; text-decoration: none;">群1 · 自定义照片</a>
+                <a class="btn btn-primary" href="https://qm.qq.com/q/WT8881ieyc" target="_blank" rel="noopener noreferrer" style="width: 100%; font-size: 14px; padding: 10px 0; border-radius: 10px; font-weight: 500; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; margin-top: 10px;">群2 · 摄像头信息<span style="font-size: 11px; opacity: 0.7;">（群1满人进这个）</span></a>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="mini-program-fab donate" id="donateFab" aria-label="赞赏作者">赞赏</button>
+    <button type="button" class="mini-program-fab" id="miniProgramFab" aria-label="打开微信小程序">小程序</button>
+
+    <div class="modal-overlay modal-compact" id="donateModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title">☕ 请作者喝杯奶茶</span>
+                <button class="modal-close" id="donateClose">×</button>
+            </div>
+            <div class="modal-body">
+                <div style="font-size: 13px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; font-weight: 400; letter-spacing: 0.3px;">
+                服务器需要成本，有能力的宝宝们支持一下呀<br>
+                谢谢宝宝们支持爱你们哦
                 </div>
                 <img src="https://yz.yhcn.top/vx.jpg" alt="赞赏码" style="width: 100%; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 20px;">
-                
-                <div style="display: flex; gap: 10px; flex-direction: column;">
-                    <a class="btn btn-primary" id="afdianBtn" href="https://afdian.com/a/xiachunyu" target="_blank" rel="noopener noreferrer" style="width: 100%; font-size: 14px; padding: 10px 0; border-radius: 10px; font-weight: 500; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; background: linear-gradient(135deg, #946CEE 0%, #B18CFF 100%); box-shadow: 0 2px 8px rgba(148, 108, 238, 0.35);">⚡ 爱发电支持作者</a>
-                    <a class="btn btn-primary" id="joinGroupBtn" href="#" target="_blank" rel="noopener noreferrer" style="width: 100%; font-size: 14px; padding: 10px 0; border-radius: 10px; font-weight: 500; display: inline-flex; align-items: center; justify-content: center; text-decoration: none;">加入交流群</a>
-                    <button class="btn btn-secondary" id="hideSupportTodayBtn" style="width: 100%; font-size: 14px; padding: 10px 0; border-radius: 10px; background: var(--surface-light); border: 1px solid var(--border); color: var(--text-secondary);">今日不再提示</button>
-                </div>
+                <a class="btn btn-primary" href="https://afdian.com/a/xiachunyu" target="_blank" rel="noopener noreferrer" style="width: 100%; font-size: 14px; padding: 10px 0; border-radius: 10px; font-weight: 500; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; background: linear-gradient(135deg, #946CEE 0%, #B18CFF 100%); box-shadow: 0 2px 8px rgba(148, 108, 238, 0.35);">⚡ 爱发电支持作者</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay modal-compact" id="miniProgramModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title">📱 微信小程序</span>
+                <button class="modal-close" id="miniProgramClose">×</button>
+            </div>
+            <div class="modal-body">
+                <div style="font-size: 13px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px;">请宝宝们多用用小程序呀让作者赚点广告维护服务器呀效益不好可能以后会考虑收费
+                <br>如果收费赞助过的以后也可以找我免费使用<br>
+                谢谢宝宝们支持</div>
+                <img src="https://yz.yhcn.top/xcx.jpg" alt="微信小程序码" loading="lazy" style="width: 200px; height: 200px; border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
+                <div style="font-size: 12px; color: var(--text-secondary); margin-top: 14px; line-height: 1.7;">长按保存图片，打开微信「扫一扫」识别使用</div>
             </div>
         </div>
     </div>
