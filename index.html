@@ -16,9 +16,7 @@
             --primary-dark: #E85A8A;
             --primary-light: #FFE4ED;
             --success: #7DD3A8;
-            --warning: #FFB347;
             --danger: #FF6B6B;
-            --purple: #C9A8FF;
             --bg: #FFF9FB;
             --surface: #FFFFFF;
             --surface-light: #FFF0F5;
@@ -29,11 +27,8 @@
             --header-bg: rgba(255,249,251,0.9);
             --modal-overlay: rgba(255, 249, 251, 0.6);
             --modal-shadow: 0 24px 48px rgba(255, 107, 157, 0.12);
-            --input-bg: #FFFFFF;
-            --btn-hover: #FFF5F8;
             --shadow-color: rgba(255, 107, 157, 0.08);
             --shadow-color-strong: rgba(255, 107, 157, 0.18);
-            --shadow-color-heavy: rgba(255, 107, 157, 0.25);
             --bg-gradient-1: rgba(255, 107, 157, 0.12);
             --bg-gradient-2: rgba(201, 168, 255, 0.1);
             --search-focus-border: rgba(255, 122, 166, 0.5);
@@ -62,7 +57,6 @@
             --icon-teal: linear-gradient(135deg, #E0F2F1, #B2DFDB);
             --icon-indigo: linear-gradient(135deg, #E8EAF6, #C5CAE9);
             --preview-tag-bg: linear-gradient(135deg, #E8F5E9 0%, #E3F2FD 100%);
-            --preview-tag-border: #81C784;
             --preview-tag-color: #2E7D32;
             --setting-row-border: rgba(255, 214, 229, 0.65);
             --media-thumb-bg: #f5f5f5;
@@ -86,9 +80,7 @@
             --primary-dark: #FF9EC4;
             --primary-light: rgba(255, 107, 157, 0.18);
             --success: #5CB88A;
-            --warning: #E69A2E;
             --danger: #FF5252;
-            --purple: #B388FF;
             --bg: #121212;
             --surface: #1E1E1E;
             --surface-light: #2A2A2A;
@@ -99,11 +91,8 @@
             --header-bg: rgba(18, 18, 18, 0.9);
             --modal-overlay: rgba(0, 0, 0, 0.7);
             --modal-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
-            --input-bg: #2C2C2C;
-            --btn-hover: #2A2A2A;
             --shadow-color: rgba(0, 0, 0, 0.3);
             --shadow-color-strong: rgba(0, 0, 0, 0.4);
-            --shadow-color-heavy: rgba(0, 0, 0, 0.5);
             --bg-gradient-1: rgba(255, 133, 176, 0.05);
             --bg-gradient-2: rgba(179, 136, 255, 0.05);
             --search-focus-border: rgba(255, 133, 176, 0.5);
@@ -132,7 +121,6 @@
             --icon-teal: linear-gradient(135deg, rgba(77, 182, 172, 0.24), rgba(56, 142, 132, 0.14));
             --icon-indigo: linear-gradient(135deg, rgba(159, 168, 218, 0.24), rgba(121, 134, 203, 0.14));
             --preview-tag-bg: linear-gradient(135deg, rgba(92, 184, 138, 0.2), rgba(100, 181, 246, 0.16));
-            --preview-tag-border: rgba(92, 184, 138, 0.55);
             --preview-tag-color: #7DD3A8;
             --setting-row-border: rgba(255, 133, 176, 0.18);
             --media-thumb-bg: #1a1a1a;
@@ -239,44 +227,60 @@
             cursor: not-allowed;
         }
 
-        .header-reset-btn {
-            width: 36px;
-            height: 36px;
-            padding: 0;
+        /* 右上角设置键：聚合公告/主题/清空，展开为下拉菜单 */
+        .settings-wrap {
+            position: relative;
+        }
+
+        .settings-menu {
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            min-width: 168px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            padding: 6px;
+            display: none;
+            flex-direction: column;
+            gap: 2px;
+            z-index: 200;
+        }
+
+        .settings-menu.open {
+            display: flex;
+        }
+
+        .settings-item {
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 10px 12px;
+            border: none;
+            background: none;
             border-radius: 10px;
-            color: var(--primary);
-            border-color: var(--border);
-            background: var(--surface);
-            transition: all 0.2s;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: inherit;
+            color: var(--text);
+            cursor: pointer;
+            text-align: left;
+            white-space: nowrap;
         }
 
-        .header-reset-btn:not(:disabled):active {
-            background: var(--primary-light);
-            border-color: var(--primary);
-            transform: rotate(-45deg) scale(0.9);
+        .settings-item:active {
+            background: var(--surface-light);
         }
 
-        .header-theme-btn {
-            width: 36px;
-            height: 36px;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-            color: var(--text-secondary);
-            border-color: var(--border);
-            background: var(--surface);
+        .settings-item:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
         }
 
-        .header-theme-btn:active {
-            background: var(--primary-light);
-            border-color: var(--primary);
-            color: var(--primary-dark);
-            transform: scale(0.92);
+        .settings-item svg {
+            flex-shrink: 0;
         }
 
         
@@ -2218,6 +2222,8 @@
         .modal-compact .modal-title { font-weight: 500; font-size: 16px; }
         .modal-compact .modal-close { background: var(--surface-light); border-radius: 50%; }
         .modal-compact .modal-body { padding: 12px 20px 24px; }
+        .modal-compact .modal-btn { width: 100%; font-size: 14px; padding: 10px 0; border-radius: 10px; font-weight: 500; }
+        .modal-compact a.modal-btn { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
     </style>
     <script>
         // 预渲染主题：已存偏好 > 系统偏好，避免暗色模式闪白（key 与 app.js THEME_STORAGE_KEY 一致）
@@ -2235,22 +2241,29 @@
         <div class="header-content">
             <span class="header-title">EXIF 编辑器</span>
             <div class="header-actions">
-                <button class="header-btn" id="supportBtn" type="button" title="赞赏与反馈" style="font-size: 14px; padding: 0 12px; width: auto; white-space: nowrap; font-weight: 500;">
-                    公告
-                </button>
                 <a class="header-btn" href="https://afdian.com/a/xiachunyu" target="_blank" rel="noopener noreferrer" title="爱发电支持作者" style="font-size: 14px; padding: 0 12px; width: auto; white-space: nowrap; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; color: #946CEE; border-color: rgba(148, 108, 238, 0.4);">
                     ⚡ 爱发电
                 </a>
-                <button class="header-btn header-theme-btn" id="themeToggleBtn" type="button" title="深色模式" aria-label="切换深色模式">
-                    <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-                    <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-                </button>
-                <button class="header-btn header-reset-btn" id="resetBtn" disabled title="清空所有 EXIF 参数与设置">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="1 4 1 10 7 10"/>
-                        <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
-                    </svg>
-                </button>
+                <div class="settings-wrap">
+                    <button class="header-btn" id="settingsBtn" type="button" title="设置" aria-label="设置" style="width: 36px; height: 36px; padding: 0; display: flex; align-items: center; justify-content: center;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                    </button>
+                    <div class="settings-menu" id="settingsMenu">
+                        <button class="settings-item" id="supportBtn" type="button">📢 公告</button>
+                        <button class="settings-item" id="themeToggleBtn" type="button" title="切换深色模式" aria-label="切换深色模式">
+                            <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                            <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                            主题切换
+                        </button>
+                        <button class="settings-item" id="resetBtn" disabled title="清空所有 EXIF 参数与设置">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="1 4 1 10 7 10"/>
+                                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
+                            </svg>
+                            清空参数
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -2670,17 +2683,14 @@
                 </div>
             </div>
 
-            <div style="margin: 24px 16px 0; padding: 24px 20px; text-align: center; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; box-shadow: 0 4px 16px rgba(0,0,0,0.04);">
-                <div style="font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 6px;">📱 微信小程序版</div>
-                <div style="font-size: 13px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px;">手机端推荐直接用小程序<br>即开即用 · 免安装 · 和网页版一样免费</div>
-                <img src="https://yz.yhcn.top/xcx.jpg" alt="微信小程序码" loading="lazy" style="width: 180px; height: 180px; border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
-                <div style="font-size: 12px; color: var(--text-secondary); margin-top: 14px; line-height: 1.7;">长按保存图片，打开微信「扫一扫」识别使用</div>
-            </div>
-
-            <div class="site-footer" style="text-align: center; padding: 24px 0 100px; font-size: 12px; color: var(--text-secondary); opacity: 0.8; margin-top: 0;">
-                <span>总访问量 <span id="busuanzi_value_site_pv" style="font-weight: 600; color: var(--primary);"></span> 次</span>
-                <span style="margin: 0 10px; opacity: 0.5;">|</span>
-                <span>总访客数 <span id="busuanzi_value_site_uv" style="font-weight: 600; color: var(--primary);"></span> 人</span>
+            <div class="site-footer" style="text-align: center; padding: 24px 0 100px; font-size: 12px; color: var(--text-secondary); opacity: 0.8; margin-top: 24px;">
+                <span>总访问量 <span id="stat_pv" style="font-weight: 600; color: var(--primary);">-</span> 次</span>
+                <span style="margin: 0 8px; opacity: 0.5;">|</span>
+                <span>访客 <span id="stat_uv" style="font-weight: 600; color: var(--primary);">-</span> 人</span>
+                <span style="margin: 0 8px; opacity: 0.5;">|</span>
+                <span>今日 <span id="stat_today" style="font-weight: 600; color: var(--primary);">-</span> 次 / <span id="stat_tuv" style="font-weight: 600; color: var(--primary);">-</span> 人</span>
+                <span style="margin: 0 8px; opacity: 0.5;">|</span>
+                <span>导出 <span id="stat_exp" style="font-weight: 600; color: var(--primary);">-</span> 次</span>
             </div>
         </div>
     </div>
@@ -2734,9 +2744,23 @@
                 </div>
 
                 <div style="display: flex; gap: 10px; flex-direction: column;">
-                    <button type="button" class="btn btn-primary" id="supportGoMiniProgram" style="width: 100%; font-size: 14px; padding: 10px 0; border-radius: 10px; font-weight: 500;">📱 去用小程序</button>
-                    <button type="button" class="btn btn-primary" id="groupListBtn" style="width: 100%; font-size: 14px; padding: 10px 0; border-radius: 10px; font-weight: 500;">💬 加入交流群</button>
+                    <button type="button" class="btn btn-primary modal-btn" id="supportGoMiniProgram">📱 去用小程序</button>
+                    <button type="button" class="btn btn-primary modal-btn" id="groupListBtn">💬 加入交流群</button>
+                    <button type="button" class="btn btn-primary modal-btn" id="feedbackBtn">✉️ 意见反馈</button>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay modal-compact" id="feedbackModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title">✉️ 意见反馈</span>
+                <button class="modal-close" id="feedbackClose">×</button>
+            </div>
+            <div class="modal-body">
+                <textarea id="feedbackText" maxlength="200" placeholder="想实现的功能 / 遇到的问题" style="width: 100%; height: 96px; padding: 10px; box-sizing: border-box; border: 1px solid var(--border); border-radius: 12px; background: var(--surface-light); color: var(--text); font-size: 13px; line-height: 1.6; resize: none; outline: none; font-family: inherit;"></textarea>
+                <button type="button" class="btn btn-primary modal-btn" id="feedbackSend" style="margin-top: 10px;">发送</button>
             </div>
         </div>
     </div>
@@ -2748,8 +2772,8 @@
                 <button class="modal-close" id="groupListClose">×</button>
             </div>
             <div class="modal-body">
-                <a class="btn btn-primary" href="https://qm.qq.com/q/EICoAHA0Tu" target="_blank" rel="noopener noreferrer" style="width: 100%; font-size: 14px; padding: 10px 0; border-radius: 10px; font-weight: 500; display: inline-flex; align-items: center; justify-content: center; text-decoration: none;">群1 · 自定义照片</a>
-                <a class="btn btn-primary" href="https://qm.qq.com/q/WT8881ieyc" target="_blank" rel="noopener noreferrer" style="width: 100%; font-size: 14px; padding: 10px 0; border-radius: 10px; font-weight: 500; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; margin-top: 10px;">群2 · 摄像头信息<span style="font-size: 11px; opacity: 0.7;">（群1满人进这个）</span></a>
+                <a class="btn btn-primary modal-btn" href="https://qm.qq.com/q/EICoAHA0Tu" target="_blank" rel="noopener noreferrer">群1 · 自定义照片</a>
+                <a class="btn btn-primary modal-btn" href="https://qm.qq.com/q/WT8881ieyc" target="_blank" rel="noopener noreferrer" style="margin-top: 10px;">群2 · 摄像头信息<span style="font-size: 11px; opacity: 0.7;">（群1满人进这个）</span></a>
             </div>
         </div>
     </div>
@@ -2769,7 +2793,7 @@
                 谢谢宝宝们支持爱你们哦
                 </div>
                 <img src="https://yz.yhcn.top/vx.jpg" alt="赞赏码" style="width: 100%; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 20px;">
-                <a class="btn btn-primary" href="https://afdian.com/a/xiachunyu" target="_blank" rel="noopener noreferrer" style="width: 100%; font-size: 14px; padding: 10px 0; border-radius: 10px; font-weight: 500; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; background: linear-gradient(135deg, #946CEE 0%, #B18CFF 100%); box-shadow: 0 2px 8px rgba(148, 108, 238, 0.35);">⚡ 爱发电支持作者</a>
+                <a class="btn btn-primary modal-btn" href="https://afdian.com/a/xiachunyu" target="_blank" rel="noopener noreferrer" style="background: linear-gradient(135deg, #946CEE 0%, #B18CFF 100%); box-shadow: 0 2px 8px rgba(148, 108, 238, 0.35);">⚡ 爱发电支持作者</a>
             </div>
         </div>
     </div>
@@ -2790,6 +2814,21 @@
         </div>
     </div>
     <script src="app.js"></script>
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script>
+    // 自建统计：vid 存 localStorage（iOS Safari 拦第三方 Cookie，localStorage 更精确），
+    // 页面加载即请求，不蒜子式挂起不会影响页面
+    (function () {
+        var vid = 'anon';
+        try {
+            vid = localStorage.getItem('stat_vid');
+            if (!vid) { vid = Date.now().toString(36) + Math.random().toString(36).slice(2, 10); localStorage.setItem('stat_vid', vid); }
+        } catch (e) {}
+        function fill(d) { ['pv', 'uv', 'today', 'tuv', 'exp'].forEach(function (k) { var el = document.getElementById('stat_' + k); if (el) el.textContent = d[k]; }); }
+        fetch('https://yz.yhcn.top/%E5%AE%87/exif%E7%BB%9F%E8%AE%A1.php?vid=' + encodeURIComponent(vid), { cache: 'no-store' }).then(function (r) { return r.json(); }).then(fill).catch(function () {});
+        window.statExport = function () {
+            fetch('https://yz.yhcn.top/%E5%AE%87/exif%E7%BB%9F%E8%AE%A1.php?action=export', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(fill).catch(function () {});
+        };
+    })();
+    </script>
 </body>
 </html>
