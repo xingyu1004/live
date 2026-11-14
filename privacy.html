@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FFF5F8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0C0A12" media="(prefers-color-scheme: dark)">
+<title>膜术师 隐私政策</title>
+<style>
+  /* 膜术师主题配色：粉紫品牌渐变，浅色 / 深色随系统自适应（与 App 内主题一致） */
+  :root {
+    color-scheme: light;
+    --page-bg: #FFF5F8;
+    --glow-1: rgba(255, 107, 153, 0.16);
+    --glow-2: rgba(184, 133, 250, 0.16);
+    --text: #3A2A33;
+    --text-2: #8A6E79;
+    --text-3: #B9A3AC;
+    --separator: #F3DCE5;
+    --card: #FFFFFF;
+    --card-soft: #FDF1F5;
+    --rose: #FF6B99;
+    --rose-deep: #D93875;
+    --purple: #B885FA;
+    --grad: linear-gradient(135deg, #FF6B99, #B885FA);
+    --shadow: 0 8px 22px rgba(217, 56, 117, 0.08);
+    --shadow-soft: 0 1px 4px rgba(217, 56, 117, 0.10);
+    --radius: 20px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --page-bg: #0C0A12;
+      --glow-1: rgba(255, 107, 153, 0.10);
+      --glow-2: rgba(184, 133, 250, 0.12);
+      --text: #F5EDF2;
+      --text-2: #B8A8B2;
+      --text-3: #73616B;
+      --separator: #2A2030;
+      --card: #191320;
+      --card-soft: #241B2E;
+      --rose: #FF6B99;
+      --rose-deep: #FF8FB0;
+      --purple: #B885FA;
+      --shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+      --shadow-soft: 0 1px 4px rgba(0, 0, 0, 0.30);
+    }
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 16px; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Hiragino Sans GB",
+        "Microsoft YaHei", "Segoe UI", Roboto, sans-serif;
+    line-height: 1.7;
+    color: var(--text);
+    min-height: 100vh;
+    padding: max(24px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right))
+        max(32px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+    -webkit-font-smoothing: antialiased;
+  }
+  /* 页面背景 + 品牌光晕（对应 App 首页的粉紫 glow） */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(560px 420px at 12% -6%, var(--glow-1), transparent 70%),
+      radial-gradient(620px 480px at 96% 4%, var(--glow-2), transparent 70%),
+      var(--page-bg);
+  }
+
+  .page { max-width: 760px; margin: 0 auto; }
+
+  .glass {
+    background: var(--card);
+    border: 1px solid var(--separator);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+
+  /* 顶部品牌头 */
+  .top { display: flex; align-items: center; gap: 14px; min-width: 0; margin-bottom: 28px; }
+  .top img {
+    width: 68px; height: 68px;
+    border-radius: 15px;
+    flex: none;
+    box-shadow: var(--shadow-soft), 0 0 0 0.5px var(--separator);
+  }
+  .top h1 { font-size: 26px; line-height: 1.2; font-weight: 800; letter-spacing: -0.01em; }
+  .top .eyebrow {
+    font-size: 13px; font-weight: 700; line-height: 1.3;
+    background: var(--grad);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+  }
+  .top .meta { font-size: 12px; color: var(--text-3); margin-top: 2px; }
+
+  .intro { font-size: 15px; color: var(--text-2); margin: 0 6px 16px; }
+  .intro strong { color: var(--rose-deep); font-weight: 600; }
+
+  /* 三要点卡 */
+  .points { padding: 8px 20px; margin-bottom: 16px; }
+  .point { display: flex; gap: 14px; padding: 14px 0; align-items: flex-start; }
+  .point + .point { border-top: 0.5px solid var(--separator); }
+  .icon {
+    flex: none;
+    width: 38px; height: 38px;
+    border-radius: 10px;
+    display: grid; place-items: center;
+    background: var(--card-soft);
+    color: var(--rose-deep);
+  }
+  .icon svg { width: 19px; height: 19px; }
+  .point h3 { font-size: 15px; font-weight: 700; line-height: 1.4; }
+  .point p { font-size: 14px; color: var(--text-2); margin-top: 2px; }
+
+  /* 目录 */
+  .toc { padding: 16px 20px; margin-bottom: 16px; }
+  .toc h2 { font-size: 13px; font-weight: 600; color: var(--text-3); margin-bottom: 8px; }
+  .toc ol { list-style: none; columns: 2; column-gap: 24px; }
+  .toc li { break-inside: avoid; }
+  .toc a {
+    display: block;
+    padding: 5px 0;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 15px;
+  }
+  .toc a span { display: inline-block; min-width: 1.6em; color: var(--rose); font-weight: 700; font-variant-numeric: tabular-nums; }
+  .toc a:hover { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--rose); }
+
+  /* 正文各节 */
+  section.glass { padding: 22px 22px 8px; margin-bottom: 16px; }
+  section h2 {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 19px; line-height: 1.35; font-weight: 800;
+    margin-bottom: 12px;
+  }
+  section h2 .num {
+    flex: none;
+    width: 26px; height: 26px;
+    border-radius: 8px;
+    display: grid; place-items: center;
+    font-size: 13px; font-weight: 700;
+    color: #fff;
+    background: var(--grad);
+    box-shadow: var(--shadow-soft);
+    font-variant-numeric: tabular-nums;
+  }
+  section h3 { font-size: 15px; font-weight: 700; margin: 18px 0 6px; color: var(--rose-deep); }
+  section h2 + h3, section h2 + p { margin-top: 4px; }
+  section p, section li { font-size: 15px; color: var(--text-2); }
+  section p { margin-bottom: 14px; }
+  section ul { list-style: none; margin-bottom: 14px; }
+  section li { position: relative; padding-left: 16px; margin-bottom: 8px; }
+  section li::before {
+    content: "";
+    position: absolute;
+    left: 2px; top: 0.72em;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--rose);
+    opacity: 0.55;
+  }
+  section strong { color: var(--text); font-weight: 600; }
+  a { color: var(--rose-deep); text-decoration-color: currentColor; text-underline-offset: 3px; }
+  a:hover { color: var(--rose); }
+
+  /* 联网场景 / 权限表格 */
+  .table-wrap { overflow-x: auto; margin-bottom: 14px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { border: 1px solid var(--separator); padding: 10px 12px; text-align: left; vertical-align: top; }
+  th { background: var(--card-soft); color: var(--text); font-weight: 700; white-space: nowrap; }
+  td strong { color: var(--rose-deep); }
+
+  /* 联系方式行卡 */
+  .rows { margin: 4px 0 14px; border-radius: 12px; background: var(--card-soft); overflow: hidden; }
+  .row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    gap: 16px;
+    padding: 12px 16px;
+    font-size: 15px;
+  }
+  .row + .row { border-top: 0.5px solid var(--separator); }
+  .row .k { color: var(--text-2); flex: none; }
+  .row .v { color: var(--text); text-align: right; word-break: break-all; }
+
+  footer { text-align: center; font-size: 13px; color: var(--text-3); margin-top: 24px; }
+
+  @media (max-width: 560px) {
+    .top img { width: 60px; height: 60px; border-radius: 13px; }
+    .top h1 { font-size: 22px; }
+    .toc ol { columns: 1; }
+    section.glass { padding: 20px 18px 6px; }
+    section h2 { font-size: 18px; }
+  }
+  @media print {
+    body { background: #fff; padding: 0; }
+    body::before { display: none; }
+    section.glass { page-break-inside: avoid; box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="top">
+    <img src="data:image/jpeg;base64,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" alt="膜术师 App 图标">
+    <div>
+      <div class="eyebrow">膜术师</div>
+      <h1>隐私政策</h1>
+      <div class="meta">最后更新：2026 年 11 月 14 日 · v1.2 · 开发者/运营者：宇</div>
+    </div>
+  </header>
+
+  <p class="intro">欢迎使用「膜术师」（以下简称“本应用”）。我们非常重视你的隐私。本政策说明你在使用本应用进行<strong>媒体元数据管理、贴膜美化与素材提取</strong>，以及注册和登录<strong>账号</strong>时，我们如何收集、使用、存储和保护你的信息。请在使用前仔细阅读；点击“同意”继续使用，即表示你已阅读并同意本政策全部内容。</p>
+
+  <div class="glass points">
+    <div class="point">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.6"/><path d="M10.5 18.5h3"/></svg></div>
+      <div><h3>媒体全部在本机处理</h3><p>你选择的照片与视频只在本机读取和改写，不会上传到任何服务器。</p></div>
+    </div>
+    <div class="point">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12s-3.5 6.5-9.5 6.5S2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/><path d="M4 4l16 16"/></svg></div>
+      <div><h3>不追踪、不画像</h3><p>不采集广告标识符（IDFA），不做跨应用跟踪与用户画像分析。</p></div>
+    </div>
+    <div class="point">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.4"/><path d="M8.5 10.5V7.5a3.5 3.5 0 0 1 7 0v3"/></svg></div>
+      <div><h3>加密传输、强制验签</h3><p>与服务器的通信全程加密，并对响应强制签名校验，防窃听、防篡改。</p></div>
+    </div>
+  </div>
+
+  <nav class="glass toc" aria-label="目录">
+    <h2>目录</h2>
+    <ol>
+      <li><a href="#s1"><span>1</span>信息收集</a></li>
+      <li><a href="#s2"><span>2</span>账号与会员服务</a></li>
+      <li><a href="#s3"><span>3</span>信息使用</a></li>
+      <li><a href="#s4"><span>4</span>数据存储和安全</a></li>
+      <li><a href="#s5"><span>5</span>联网服务与第三方服务</a></li>
+      <li><a href="#s6"><span>6</span>权限使用说明</a></li>
+      <li><a href="#s7"><span>7</span>您的权利</a></li>
+      <li><a href="#s8"><span>8</span>未成年人保护</a></li>
+      <li><a href="#s9"><span>9</span>隐私政策的变更</a></li>
+      <li><a href="#s10"><span>10</span>联系我们</a></li>
+    </ol>
+  </nav>
+
+  <section class="glass" id="s1">
+    <h2><span class="num">1</span>信息收集</h2>
+
+    <h3>1.1 我们处理的信息</h3>
+    <p>本应用遵循最小化原则，仅在实现功能所必需时处理以下信息：</p>
+    <ul>
+      <li><strong>本机媒体数据：</strong>你选择的照片、实况照片与视频的元数据（拍摄时间、设备型号、镜头信息、GPS 位置等）读取与改写、隐私擦除、人脸遮挡、贴膜合成与美化，<strong>全部在本机完成，相关文件不会离开你的设备</strong>；所有编辑均生成副本，原始文件不会被修改或删除。</li>
+      <li><strong>账号信息（仅当你注册或登录时）：</strong>注册所需的自选用户名、邮箱与密码（密码仅用于创建账号与登录校验）；使用 Apple 登录时，仅把你授权后由 Apple 签发的登录凭证（identity token）发送至我们的服务器完成验证，<strong>我们不获取、不存储你的 Apple 账户姓名与邮箱</strong>（以邮箱注册除外）。</li>
+      <li><strong>设备信息：</strong>苹果系统提供的供应商标识符（IDFV）与设备型号，用于设备数管控与授权校验。IDFV 由 iOS 生成、仅在本应用范围内有效、卸载后即重置，不指向设备硬件。</li>
+      <li><strong>会话令牌：</strong>登录成功后由服务器签发，保存在 iOS 钥匙串（KeyChain）中，用于免密自动登录与每次冷启动的会话核验。</li>
+      <li><strong>剪贴板内容：</strong>仅当你在“素材提取”功能中主动点击「粘贴」按钮时读取分享链接文本，不会在后台读取或监听。</li>
+    </ul>
+
+    <h3>1.2 我们不收集的信息</h3>
+    <ul>
+      <li>你的通讯录、日历、短信等个人通信信息；</li>
+      <li>广告标识符（IDFA）或任何跨应用追踪数据；</li>
+      <li>你相册中未选择处理的照片与视频；</li>
+      <li>除地图选点功能外（仅在你主动使用时）的任何位置信息。</li>
+    </ul>
+  </section>
+
+  <section class="glass" id="s2">
+    <h2><span class="num">2</span>账号与会员服务</h2>
+    <ul>
+      <li><strong>注册与登录：</strong>支持邮箱验证码注册与账号密码登录，也支持 Apple 一键登录（自动注册）。登录后你可随时在账号页退出登录。</li>
+      <li><strong>会话核验：</strong>为保障账号安全，每次启动 App 都会向服务器确认会话有效性并换取最新档案；会话失效时需要重新登录。</li>
+      <li><strong>会员档案：</strong>服务器保存你的账号档案（会员状态、到期时间、等级、剩余使用次数），用于向你提供对应权益，<strong>不保存你的任何媒体文件</strong>。</li>
+      <li><strong>邮箱验证码：</strong>注册时向你的邮箱发送一次性验证码，用于确认邮箱归属。</li>
+      <li><strong>注销账号：</strong>你可通过账号页的「注销账号并删除全部数据」入口联系我们删除账号及服务器上的全部账号数据。</li>
+    </ul>
+  </section>
+
+  <section class="glass" id="s3">
+    <h2><span class="num">3</span>信息使用</h2>
+    <ul>
+      <li>账号与设备信息仅用于<strong>创建与校验账号、维持登录会话、提供会员权益</strong>；</li>
+      <li>应用版本号仅用于<strong>获取运营公告、更新说明与判断是否需要更新</strong>；</li>
+      <li>你主动粘贴的分享链接仅用于<strong>解析获取素材地址</strong>，不在服务器长期存储；</li>
+      <li>你的信息<strong>不用于广告投放，不用于用户画像，不出售、不出租给任何第三方</strong>。</li>
+    </ul>
+  </section>
+
+  <section class="glass" id="s4">
+    <h2><span class="num">4</span>数据存储和安全</h2>
+    <ul>
+      <li><strong>本地存储：</strong>编辑副本、临时文件与偏好设置均保存在应用沙盒内；会话令牌保存在 iOS 钥匙串。你可以卸载应用彻底删除全部本地数据。</li>
+      <li><strong>服务器存储：</strong>仅保存账号档案数据（用户名、邮箱、会员状态、设备绑定信息等），<strong>不保存你的媒体文件</strong>。密码仅用于注册与登录校验，请勿使用与其他网站相同的密码。</li>
+      <li><strong>传输安全：</strong>与服务器的通信采用 AES-GCM 加密，请求附带签名、响应强制 Ed25519 签名校验，防止被窃听或篡改。</li>
+      <li><strong>保存期限：</strong>本地临时文件在任务完成后及时清理；会话令牌在退出登录或卸载应用后删除；账号数据保留至你注销账号为止。</li>
+    </ul>
+  </section>
+
+  <section class="glass" id="s5">
+    <h2><span class="num">5</span>联网服务与第三方服务</h2>
+    <p>本应用的所有媒体处理功能均在本机执行。仅以下场景会发生网络传输：</p>
+    <div class="table-wrap">
+    <table>
+      <tr><th>场景</th><th>传输内容</th><th>目的</th></tr>
+      <tr><td><strong>账号服务</strong></td><td>账号信息、设备信息、会话令牌</td><td>注册 / 登录 / 会话核验 / 会员档案</td></tr>
+      <tr><td><strong>启动公告与版本检查</strong></td><td>应用版本号</td><td>获取公告、更新说明与最新版本号</td></tr>
+      <tr><td><strong>邮箱验证码</strong></td><td>你填写的邮箱地址</td><td>发送注册验证码</td></tr>
+      <tr><td><strong>素材提取</strong></td><td>你主动粘贴的分享链接</td><td>解析素材实际地址以供保存</td></tr>
+      <tr><td><strong>地图选点</strong></td><td>搜索关键词、经纬度坐标</td><td>地点搜索与逆地理编码，为照片选择 GPS</td></tr>
+    </table>
+    </div>
+    <p>涉及的第三方服务均以你主动使用相应功能为前提：</p>
+    <ul>
+      <li><strong>Apple 登录：</strong>由 Apple 验证你授权的登录凭证，遵循 Apple 隐私政策；</li>
+      <li><strong>地图服务：</strong>调用高德或腾讯地图开放接口（你可自行配置密钥）；</li>
+      <li><strong>素材解析服务、邮件服务、公告与账号托管：</strong>由开发者服务器及相关服务商处理。</li>
+    </ul>
+  </section>
+
+  <section class="glass" id="s6">
+    <h2><span class="num">6</span>权限使用说明</h2>
+    <div class="table-wrap">
+    <table>
+      <tr><th>权限</th><th>触发方式</th><th>用途</th></tr>
+      <tr><td>照片库（读写）</td><td>首次使用时弹窗征得同意</td><td>读取你选择的照片/视频进行处理，结果副本保存回照片库</td></tr>
+      <tr><td>网络访问</td><td>系统默认</td><td>仅用于本政策第 5 节所述联网场景</td></tr>
+      <tr><td>剪贴板</td><td>你点击「粘贴」按钮时</td><td>读取分享链接文本</td></tr>
+      <tr><td>位置（仅使用期间）</td><td>你使用地图选点功能时</td><td>获取当前位置坐标，仅用于写入照片 GPS</td></tr>
+      <tr><td>Apple 登录</td><td>你点击 Apple 登录按钮并授权时</td><td>获取登录凭证完成账号创建 / 匹配</td></tr>
+      <tr><td>打开链接</td><td>你点击外部链接时</td><td>跳转 Safari 打开更新页、群聊加入页等</td></tr>
+    </table>
+    </div>
+    <p>你可以在系统「设置」中随时关闭相关权限，关闭后对应功能将不可用，但不影响其他功能。</p>
+  </section>
+
+  <section class="glass" id="s7">
+    <h2><span class="num">7</span>您的权利</h2>
+    <ul>
+      <li><strong>随时删除本地数据：</strong>卸载本应用即彻底删除沙盒内全部本地数据；</li>
+      <li><strong>退出登录：</strong>账号页可随时退出登录，本地会话令牌随即清除；</li>
+      <li><strong>注销账号：</strong>通过第 10 节方式联系我们，删除账号及服务器上的全部账号数据；</li>
+      <li><strong>撤回同意：</strong>不同意本政策时，可选择不使用本应用；</li>
+      <li><strong>查询与更正：</strong>对本政策所述信息处理有任何疑问，可通过文末方式联系我们。</li>
+    </ul>
+    <p>提示：使用本应用需要账号登录与启动核验，完全断网时账号相关功能不可用，但媒体处理始终在本机完成。</p>
+  </section>
+
+  <section class="glass" id="s8">
+    <h2><span class="num">8</span>未成年人保护</h2>
+    <p>本应用面向成年用户，主要功能涉及媒体元数据管理，不建议未成年人单独使用。若你是未满 14 周岁的未成年人，请在监护人陪同下阅读本政策，并在征得监护人同意后使用本应用。</p>
+  </section>
+
+  <section class="glass" id="s9">
+    <h2><span class="num">9</span>隐私政策的变更</h2>
+    <p>我们可能适时修订本政策，重大变更时会通过应用内公告向你提示。建议你定期查阅本政策以了解最新内容。若你在政策更新后继续使用本应用，即视为你接受修订后的政策。</p>
+  </section>
+
+  <section class="glass" id="s10">
+    <h2><span class="num">10</span>联系我们</h2>
+    <p>如你对本政策或个人信息处理有任何疑问、意见或投诉，可通过以下方式联系我们：</p>
+    <div class="rows">
+      <div class="row"><span class="k">开发者 / 运营者</span><span class="v">宇</span></div>
+      <div class="row"><span class="k">联系邮箱</span><span class="v"><a href="mailto:2667399917@qq.com">2667399917@qq.com</a></span></div>
+      <div class="row"><span class="k">用户交流群</span><span class="v">QQ 群 1038137782</span></div>
+      <div class="row"><span class="k">应用名称</span><span class="v">膜术师（Bundle ID：yhcn.eif）</span></div>
+    </div>
+  </section>
+
+  <footer>© 2026 膜术师 · 保留所有权利</footer>
+
+</div>
+</body>
+</html>
